@@ -5,67 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Materias do técnico</title>
   <style>
-    /* Define o fundo da página */
+    /* Todo o estilo permanece o mesmo */
     body {
       background-color: blue;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      box-sizing: border-box;
     }
 
-    /* Estiliza o container centralizado */
     .container {
       background-color: white;
-      width: 80%;
-      max-width: 800px;
-      margin: 50px auto; /* Centraliza horizontalmente com auto */
+      width: 75%;
+      height: 95vh;
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
     }
 
-    /* Estiliza a seção dos botões */
-    .botoes {
-      text-align: center;
-      margin-top: 20px;
+    .botoes-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      bottom: 20px;
+    }
+
+    .botoes-esquerda,
+    .botoes-direita {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .botoes button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 15px 30px;
+      font-size: 18px;
       border: none;
-      border-radius: 3px;
+      border-radius: 5px;
       cursor: pointer;
       background-color: #fff;
       color: #333;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .botoes button:hover {
-      background-color: #e0e0e0;
+      background-color: blue;
+      color: white;
     }
   </style>
+  <script>
+    // Função para alterar o conteúdo do container
+    function alterarConteudo(titulo, mensagem) {
+      document.querySelector('.container h1').innerText = titulo;
+      document.querySelector('.container p').innerText = mensagem;
+    }
+  </script>
 </head>
 <body>
+  <div class="botoes-wrapper">
+    <!-- Botões da esquerda -->
+    <div class="botoes-esquerda">
+      <button onclick="alterarConteudo('AMC', 'Matemática aplicada ao técnico')">AMC</button>
+      <button onclick="alterarConteudo('NR', 'Normas Regulamentadoras')">NR</button>
+      <button onclick="alterarConteudo('GT', 'Gestão Técnica')">GT</button>
+      <button onclick="alterarConteudo('POO JAVA', 'Programação Orientada a Objetos com Java')">POO JAVA</button>
+    </div>
 
-  <!-- Container centralizado com fundo branco -->
-  <div class="container">
-    <h1>Materias do técnico</h1>
-    <p>Selecione uma opção para proceguir</p>
+    <!-- Container centralizado -->
+    <div class="container">
+      <h1>Materias do técnico</h1>
+      <p>Selecione uma opção para proceguir</p>
+    </div>
+
+    <!-- Botões da direita -->
+    <div class="botoes-direita">
+      <button onclick="alterarConteudo('PROG WEB', 'Programação para Web')">PROG WEB</button>
+      <button onclick="alterarConteudo('HTML CSS', 'Desenvolvimento com HTML e CSS')">HTML CSS</button>
+      <button onclick="alterarConteudo('LOG PR', 'Lógica de Programação')">LOG PR</button>
+      <button onclick="alterarConteudo('SO', 'Sistemas Operacionais')">SO</button>
+    </div>
   </div>
-
-  <!-- Bloco dos 8 botões fora do container -->
-  <div class="botoes">
-    <button>AMC</button>
-    <button>NR</button>
-    <button>GT</button>
-    <button>POO JAVA</button>
-    <button>PROG WEB</button>
-    <button>HTML CSS</button>
-    <button>LOG PR</button>
-    <button>SO</button>
-  </div>
-
 </body>
 </html>
