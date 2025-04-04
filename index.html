@@ -50,9 +50,9 @@
       gap: 10px;
     }
 
-    .botoesbutton {
+    .botoes button {
       padding: 15px 30px;
-      font-size: px;
+      font-size: 18px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -61,8 +61,8 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .botoesbutton:hover {
-      background-color: rgb(94, 94, 173);
+    .botoes button:hover {
+      background-color: blue;
       color: white;
     }
 
@@ -70,12 +70,26 @@
       font-family: Impact;
       font-size: 60px;
     }
+
+    /* Estilo do título com efeito de neon menos intenso e texto em negrito */
+    h1 {
+      color: blue;
+      font-weight: bold; /* Negrito */
+      text-shadow: 0 0 3px #00f, 0 0 6px #00f, 0 0 12px #0ff; /* Neon menos intenso */
+      font-size: 36px;
+    }
   </style>
   <script>
     // Função para alterar o conteúdo do container
     function alterarConteudo(titulo, mensagem) {
       document.querySelector('.container h1').innerText = titulo;
       document.querySelector('.container p').innerText = mensagem;
+
+      // Remove a frase "Visite o site dos meus colegas"
+      const fraseLinks = document.querySelector('.container p:nth-of-type(2)');
+      if (fraseLinks) {
+        fraseLinks.style.display = 'none';
+      }
     }
 
     // Função para esconder os links
@@ -86,13 +100,19 @@
   </script>
 </head>
 <body>
+  <!-- Adicionando o áudio -->
+  <audio autoplay loop>
+    <source src="minha-musica.mp3" type="audio/mpeg">
+    Seu navegador não suporta a tag de áudio.
+  </audio>
+
   <div class="botoes-wrapper">
     <!-- Botões da esquerda -->
     <div class="botoes-esquerda">
-      <button class="botoesbutton" onclick="alterarConteudo('AMC', 'Arquitetura e manutenção de computadores'); esconderLinks();">AMC</button>
-      <button class="botoesbutton" onclick="alterarConteudo('NR', 'Noção de robôtica'); esconderLinks();">NR</button>
-      <button class="botoesbutton" onclick="alterarConteudo('GT', 'Gestão de tempo'); esconderLinks();">GT</button>
-      <button class="botoesbutton" onclick="alterarConteudo('POO JAVA', 'Programação Orientada a Objetos com Java'); esconderLinks();">POO JAVA</button>
+      <button onclick="alterarConteudo('AMC', 'Arquitetura e manutenção de computadores'); esconderLinks();">AMC</button>
+      <button onclick="alterarConteudo('NR', 'Noção de robôtica'); esconderLinks();">NR</button>
+      <button onclick="alterarConteudo('GT', 'Gestão de tempo'); esconderLinks();">GT</button>
+      <button onclick="alterarConteudo('POO JAVA', 'Programação Orientada a Objetos com Java'); esconderLinks();">POO JAVA</button>
     </div>
 
     <!-- Container centralizado -->
@@ -103,16 +123,16 @@
       <a href="https://1tecno.github.io/1tecno/">Site do Yago</a>
       <a href="https://1tecno.github.io/teste2/">Site do Pedro</a>
       <a href="https://flgzz.github.io/2siteemti/">Site do Felipe</a>
+      <a href="https://nauan777-bit.github.io/2Tec/">Site do Nauan</a>
     </div>
 
     <!-- Botões da direita -->
     <div class="botoes-direita">
-      <button class="botoesbutton" onclick="alterarConteudo('PROG WEB', 'Programação para Web'); esconderLinks();">PROG WEB</button>
-      <button class="botoesbutton" onclick="alterarConteudo('HTML CSS', 'Desenvolvimento com HTML e CSS'); esconderLinks();">HTML CSS</button>
-      <button class="botoesbutton" onclick="alterarConteudo('LOG PR', 'Lógica de Programação'); esconderLinks();">LOG PR</button>
-      <button class="botoesbutton" onclick="alterarConteudo('SO', 'Sistemas Operacionais'); esconderLinks();">SO</button>
+      <button onclick="alterarConteudo('PROG WEB', 'Programação para Web'); esconderLinks();">PROG WEB</button>
+      <button onclick="alterarConteudo('HTML CSS', 'Desenvolvimento com HTML e CSS'); esconderLinks();">HTML CSS</button>
+      <button onclick="alterarConteudo('LOG PR', 'Lógica de Programação'); esconderLinks();">LOG PR</button>
+      <button onclick="alterarConteudo('SO', 'Sistemas Operacionais'); esconderLinks();">SO</button>
     </div>
   </div>
 </body>
 </html>
-
