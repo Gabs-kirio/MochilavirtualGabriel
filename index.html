@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matérias do técnico</title>
   <style>
-    /* Todo o estilo permanece o mesmo */
     body {
       background-color: blue;
       margin: 0;
@@ -21,38 +20,34 @@
     .container {
       background-color: white;
       width: 75%;
-      height: 95vh;
+      height: 70vh;
       padding: 20px;
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       box-sizing: border-box;
+      position: relative;
     }
 
-    .botoes-wrapper {
+    .botoes-esquerda, .botoes-direita {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
+      gap: 10px;
       position: absolute;
-      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .botoes-esquerda,
-    .botoes-direita {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .botoes-esquerda { top: 5%; }
+    .botoes-direita { bottom: 5%; }
 
     .botoesbutton {
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 10px 20px;
+      font-size: 16px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -66,73 +61,64 @@
       color: white;
     }
 
-    .p {
-      font-family: Impact;
-      font-size: 60px;
+    .conteudo-aula, .botao-conteudo {
+      display: none;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
     }
 
-    /* Estilo do título com efeito de neon menos intenso e texto em negrito */
-    h1 {
-      color: blue;
-      font-weight: bold; /* Negrito */
-      text-shadow: 0 0 3px #00f, 0 0 6px #00f, 0 0 12px #0ff; /* Neon menos intenso */
-      font-size: 36px;
+    .botao-conteudo {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
     }
   </style>
   <script>
-    // Função para alterar o conteúdo do container
-    function alterarConteudo(titulo, mensagem) {
+    function alterarConteudo(titulo, mensagem, conteudoId, botaoConteudoId) {
       document.querySelector('.container h1').innerText = titulo;
       document.querySelector('.container p').innerText = mensagem;
+      
+      document.querySelectorAll('.botao-conteudo').forEach(botao => {
+        botao.style.display = 'none';
+      });
 
-      // Remove a frase "Visite o site dos meus colegas"
-      const fraseLinks = document.querySelector('.container p:nth-of-type(2)');
-      if (fraseLinks) {
-        fraseLinks.style.display = 'none';
-      }
+      document.getElementById(botaoConteudoId).style.display = 'block';
     }
 
-    // Função para esconder os links
-    function esconderLinks() {
-      const links = document.querySelectorAll('.container a');
-      links.forEach(link => link.style.display = 'none');
+    function exibirConteudoAula(conteudoId, botaoConteudoId) {
+      document.querySelector('.container h1').style.display = 'none';
+      document.getElementById(botaoConteudoId).style.display = 'none';
+      document.getElementById(conteudoId).style.display = 'block';
     }
   </script>
 </head>
 <body>
-  <!-- Adicionando o áudio -->
-  <audio autoplay loop>
-    <source src="minha-musica.mp3" type="audio/mpeg">
-    Seu navegador não suporta a tag de áudio.
-  </audio>
+  <div class="botoes-esquerda">
+    <button class="botoesbutton" onclick="alterarConteudo('AMC', 'Arquitetura e manutenção de computadores', 'conteudo-amc', 'botao-amc-conteudo')">AMC</button>
+    <button class="botoesbutton" onclick="alterarConteudo('GT', 'Gestão de tempo', 'conteudo-gt', 'botao-gt-conteudo')">GT</button>
+    <button class="botoesbutton" onclick="alterarConteudo('NR', 'Noção de robótica', 'conteudo-nr', 'botao-nr-conteudo')">NR</button>
+    <button class="botoesbutton" onclick="alterarConteudo('POO JAVA', 'Programação Orientada a Objetos com Java', 'conteudo-poo', 'botao-poo-conteudo')">POO JAVA</button>
+  </div>
 
-  <div class="botoes-wrapper">
-    <!-- Botões da esquerda -->
-    <div class="botoes-esquerda">
-      <button class="botoesbutton" onclick="alterarConteudo('AMC', 'Arquitetura e manutenção de computadores'); esconderLinks();">AMC</button>
-      <button class="botoesbutton" onclick="alterarConteudo('NR', 'Noção de robôtica'); esconderLinks();">NR</button>
-      <button class="botoesbutton" onclick="alterarConteudo('GT', 'Gestão de tempo'); esconderLinks();">GT</button>
-      <button class="botoesbutton" onclick="alterarConteudo('POO JAVA', 'Programação Orientada a Objetos com Java'); esconderLinks();">POO JAVA</button>
-    </div>
+  <div class="container">
+    <h1>Matérias do técnico</h1>
+    <p>Selecione uma opção para prosseguir</p>
+    <button id="botao-amc-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-amc', 'botao-amc-conteudo')">Conteúdo Específico AMC</button>
+    <button id="botao-gt-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-gt', 'botao-gt-conteudo')">Conteúdo Específico GT</button>
+    <button id="botao-nr-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-nr', 'botao-nr-conteudo')">Conteúdo Específico NR</button>
+    <button id="botao-poo-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-poo', 'botao-poo-conteudo')">Conteúdo Específico POO JAVA</button>
+    <button id="botao-web-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-web', 'botao-web-conteudo')">Conteúdo Específico PROG WEB</button>
+    <button id="botao-html-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-html', 'botao-html-conteudo')">Conteúdo Específico HTML CSS</button>
+    <button id="botao-logica-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-logica', 'botao-logica-conteudo')">Conteúdo Específico LOG PR</button>
+    <button id="botao-so-conteudo" class="botao-conteudo" onclick="exibirConteudoAula('conteudo-so', 'botao-so-conteudo')">Conteúdo Específico SO</button>
+  </div>
 
-    <!-- Container centralizado -->
-    <div class="container">
-      <h1>Matérias do técnico</h1>
-      <p>Selecione uma opção para prosseguir</p>
-      <p>Visite o site dos meus colegas:</p>
-      <a href="https://1tecno.github.io/1tecno/">Site do Yago</a>
-      <a href="https://1tecno.github.io/teste2/">Site do Pedro</a>
-      <a href="https://flgzz.github.io/2siteemti/">Site do Felipe</a>
-      <a href="https://nauan777-bit.github.io/2Tec/">Site do Nauan</a>
-    </div>
-
-    <!-- Botões da direita -->
-    <div class="botoes-direita">
-      <button class="botoesbutton" onclick="alterarConteudo('PROG WEB', 'Programação para Web'); esconderLinks();">PROG WEB</button>
-      <button class="botoesbutton" onclick="alterarConteudo('HTML CSS', 'Desenvolvimento com HTML e CSS'); esconderLinks();">HTML CSS</button>
-      <button class="botoesbutton" onclick="alterarConteudo('LOG PR', 'Lógica de Programação'); esconderLinks();">LOG PR</button>
-      <button class="botoesbutton" onclick="alterarConteudo('SO', 'Sistemas Operacionais'); esconderLinks();">SO</button>
-    </div>
+  <div class="botoes-direita">
+    <button class="botoesbutton" onclick="alterarConteudo('PROG WEB', 'Programação para Web', 'conteudo-web', 'botao-web-conteudo')">PROG WEB</button>
+    <button class="botoesbutton" onclick="alterarConteudo('HTML CSS', 'Desenvolvimento com HTML e CSS', 'conteudo-html', 'botao-html-conteudo')">HTML CSS</button>
+    <button class="botoesbutton" onclick="alterarConteudo('LOG PR', 'Lógica de Programação', 'conteudo-logica', 'botao-logica-conteudo')">LOG PR</button>
+    <button class="botoesbutton" onclick="alterarConteudo('SO', 'Sistemas Operacionais', 'conteudo-so', 'botao-so-conteudo')">SO</button>
   </div>
 </body>
 </html>
