@@ -50,9 +50,9 @@
       gap: 10px;
     }
 
-    .botoes button {
+    .botoesbutton {
       padding: 15px 30px;
-      font-size: 18px;
+      font-size: px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -61,9 +61,14 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .botoes button:hover {
-      background-color: blue;
+    .botoesbutton:hover {
+      background-color: rgb(94, 94, 173);
       color: white;
+    }
+
+    .p {
+      font-family: Impact;
+      font-size: 60px;
     }
   </style>
   <script>
@@ -72,31 +77,42 @@
       document.querySelector('.container h1').innerText = titulo;
       document.querySelector('.container p').innerText = mensagem;
     }
+
+    // Função para esconder os links
+    function esconderLinks() {
+      const links = document.querySelectorAll('.container a');
+      links.forEach(link => link.style.display = 'none');
+    }
   </script>
 </head>
 <body>
   <div class="botoes-wrapper">
     <!-- Botões da esquerda -->
     <div class="botoes-esquerda">
-      <button onclick="alterarConteudo('AMC', 'Arquitetura e manutenção de computadores')">AMC</button>
-      <button onclick="alterarConteudo('NR', 'Noção de robôtica')">NR</button>
-      <button onclick="alterarConteudo('GT', 'Gestão de tempo')">GT</button>
-      <button onclick="alterarConteudo('POO JAVA', 'Programação Orientada a Objetos com Java')">POO JAVA</button>
+      <button class="botoesbutton" onclick="alterarConteudo('AMC', 'Arquitetura e manutenção de computadores'); esconderLinks();">AMC</button>
+      <button class="botoesbutton" onclick="alterarConteudo('NR', 'Noção de robôtica'); esconderLinks();">NR</button>
+      <button class="botoesbutton" onclick="alterarConteudo('GT', 'Gestão de tempo'); esconderLinks();">GT</button>
+      <button class="botoesbutton" onclick="alterarConteudo('POO JAVA', 'Programação Orientada a Objetos com Java'); esconderLinks();">POO JAVA</button>
     </div>
 
     <!-- Container centralizado -->
     <div class="container">
       <h1>Matérias do técnico</h1>
       <p>Selecione uma opção para prosseguir</p>
+      <p>Visite o site dos meus colegas:</p>
+      <a href="https://1tecno.github.io/1tecno/">Site do Yago</a>
+      <a href="https://1tecno.github.io/teste2/">Site do Pedro</a>
+      <a href="https://flgzz.github.io/2siteemti/">Site do Felipe</a>
     </div>
 
     <!-- Botões da direita -->
     <div class="botoes-direita">
-      <button onclick="alterarConteudo('PROG WEB', 'Programação para Web')">PROG WEB</button>
-      <button onclick="alterarConteudo('HTML CSS', 'Desenvolvimento com HTML e CSS')">HTML CSS</button>
-      <button onclick="alterarConteudo('LOG PR', 'Lógica de Programação')">LOG PR</button>
-      <button onclick="alterarConteudo('SO', 'Sistemas Operacionais')">SO</button>
+      <button class="botoesbutton" onclick="alterarConteudo('PROG WEB', 'Programação para Web'); esconderLinks();">PROG WEB</button>
+      <button class="botoesbutton" onclick="alterarConteudo('HTML CSS', 'Desenvolvimento com HTML e CSS'); esconderLinks();">HTML CSS</button>
+      <button class="botoesbutton" onclick="alterarConteudo('LOG PR', 'Lógica de Programação'); esconderLinks();">LOG PR</button>
+      <button class="botoesbutton" onclick="alterarConteudo('SO', 'Sistemas Operacionais'); esconderLinks();">SO</button>
     </div>
   </div>
 </body>
 </html>
+
