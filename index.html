@@ -1,149 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matérias do técnico</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <!-- O corpo inicia com o tema claro -->
-  <body class="theme-light">
-    <!-- Música de fundo -->
-    <audio id="background-music" src="musica.mp3" autoplay loop></audio>
+function alterarConteudo(titulo, detalhes, subjectId) {
+    document.querySelector(".container h1").innerText = titulo;
+    document.querySelector(".container p").innerText = detalhes;
 
-    <!-- Seletor de temas (canto superior direito) -->
-    <div id="theme-selector">
-      <button onclick="changeTheme('light')">Modo Claro</button>
-      <button onclick="changeTheme('dark')">Modo Escuro</button>
-      <button onclick="changeTheme('pixel')">Pixel Art</button>
-      <button onclick="changeTheme('custom')">Personalizado</button>
-    </div>
+    const botoesMateria = document.querySelectorAll(".btnMateria1");
+    botoesMateria.forEach(el => el.style.display = "none");
 
-    <!-- Área para inserir o link da imagem personalizada (apenas para o tema "custom") -->
-    <div id="custom-bg" style="display: none; position: fixed; top: 50px; right: 10px; z-index: 100;">
-      <label for="custom-url">Link da imagem:</label>
-      <input type="text" id="custom-url" placeholder="https://exemplo.com/imagem.jpg" />
-      <button onclick="applyCustomBackground()">Aplicar</button>
-    </div>
+    const conteudosMateria = document.querySelectorAll(".conteudoMateria1");
+    conteudosMateria.forEach(el => el.style.display = "none");
 
-    <!-- Botões laterais para as matérias -->
-    <div class="botoes-esquerda">
-      <button
-        class="botoesbutton"
-        onclick="alterarConteudo('AMC', 'Detalhes da AMC: Arquitetura e manutenção de computadores com foco em hardware e software.', 'amc')"
-      >
-        AMC
-      </button>
-      <button
-        class="botoesbutton"
-        onclick="alterarConteudo('GT', 'Detalhes da GT: Gestão do tempo e métodos para melhorar a produtividade.', 'gt')"
-      >
-        GT
-      </button>
-      <button
-        class="botoesbutton"
-        onclick="alterarConteudo('NR', 'Detalhes da NR: Noção de robótica, sistemas automatizados e inovações tecnológicas.', 'nr')"
-      >
-        NR
-      </button>
-      <button
-        class="botoesbutton"
-        onclick="alterarConteudo('POO JAVA', 'Detalhes da POO JAVA: Programação Orientada a Objetos com Java e suas aplicações.', 'poo')"
-      >
-        POO JAVA
-      </button>
-    </div>
+    const botaoMateria = document.getElementById(`botao-${subjectId}-materia1`);
+    if (botaoMateria) botaoMateria.style.display = "block";
 
-    <!-- Container principal -->
-    <div class="container">
-      <!-- Título e descrição padrão -->
-      <h1>Matérias do técnico</h1>
-      <p>Selecione uma opção para prosseguir</p>
+    document.querySelector(".menu-amigos").style.display = "none";
 
-      <!-- Botões "materia 1" para cada matéria - ocultos por padrão -->
-      <button
-        id="botao-amc-materia1"
-        class="botao-conteudo btnMateria1"
-        onclick="exibirMeuConteudo('amc')"
-        style="display: none;"
-      >
-        materia 1
-      </button>
-      <button
-        id="botao-gt-materia1"
-        class="botao-conteudo btnMateria1"
-        onclick="exibirMeuConteudo('gt')"
-        style="display: none;"
-      >
-        materia 1
-      </button>
-      <button
-        id="botao-nr-materia1"
-        class="botao-conteudo btnMateria1"
-        onclick="exibirMeuConteudo('nr')"
-        style="display: none;"
-      >
-        materia 1
-      </button>
-      <button
-        id="botao-poo-materia1"
-        class="botao-conteudo btnMateria1"
-        onclick="exibirMeuConteudo('poo')"
-        style="display: none;"
-      >
-        materia 1
-      </button>
+    // Garante que a área de conteúdo correspondente seja exibida
+    const conteudoArea = document.getElementById(`conteudo-${subjectId}-materia1`);
+    if (conteudoArea) conteudoArea.style.display = "block";
+}
 
-      <!-- Áreas de conteúdo extra para cada matéria - ocultas por padrão -->
-      <div id="conteudo-amc-materia1" class="conteudo-aula conteudoMateria1">
-        <h2>Conteúdo Extra AMC</h2>
-        <p>Insira aqui o conteúdo extra para a matéria AMC.</p>
-      </div>
-      <div id="conteudo-gt-materia1" class="conteudo-aula conteudoMateria1">
-        <h2>Conteúdo Extra GT</h2>
-        <p>Insira aqui o conteúdo extra para a matéria GT.</p>
-      </div>
-      <div id="conteudo-nr-materia1" class="conteudo-aula conteudoMateria1">
-        <h2>Conteúdo Extra NR</h2>
-        <p>Insira aqui o conteúdo extra para a matéria NR.</p>
-      </div>
-      <div id="conteudo-poo-materia1" class="conteudo-aula conteudoMateria1">
-        <h2>Conteúdo Extra POO JAVA</h2>
-        <p>Insira aqui o conteúdo extra para a matéria POO JAVA.</p>
-      </div>
+function changeTheme(theme) {
+    document.body.classList.remove("theme-light", "theme-dark", "theme-pixel", "theme-custom");
+    document.body.classList.add("theme-" + theme);
 
-      <!-- Menu dos amigos -->
-      <nav class="menu-amigos">
-        <p>Visite o site dos meus amigos</p>
-        <ul>
-          <li>
-            <a href="https://flgzz.github.io/2siteemti/" target="_blank">Felipe</a>
-          </li>
-          <li>
-            <a href="https://1tecno.github.io/Conte-dosdeYago/" target="_blank">Yago</a>
-          </li>
-          <li>
-            <a href="https://nauan777-bit.github.io/2Tec/" target="_blank">Nauan</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Botões laterais à direita -->
-    <div class="botoes-direita">
-      <button class="botoesbutton" onclick="alert('Botão PROG WEB')">
-        PROG WEB
-      </button>
-      <button class="botoesbutton" onclick="alert('Botão HTML CSS')">
-        HTML CSS
-      </button>
-      <button class="botoesbutton" onclick="alert('Botão LOG PR')">
-        LOG PR
-      </button>
-      <button class="botoesbutton" onclick="alert('Botão SO')">
-        SO
-      </button>
-    </div>
-  </body>
-</html>
+    if (theme === "light" || theme === "dark") {
+        document.getElementById("custom-bg").style.display = "none";
+        document.body.style.backgroundImage = "";
+    } else if (theme === "pixel") {
+        document.getElementById("custom-bg").style.display = "none";
+        document.body.style.backgroundImage = "url('pixel-art.jpg')";
+    } else if (theme === "custom") {
+        document.getElementById("custom-bg").style.display = "block";
+        document.body.style.backgroundImage = "";
+    }
+}
