@@ -1,35 +1,45 @@
-function alterarConteudo(titulo, detalhes, subjectId) {
-    document.querySelector(".container h1").innerText = titulo;
-    document.querySelector(".container p").innerText = detalhes;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matérias do técnico</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="theme-light">
+    <!-- Música de fundo -->
+    <audio id="background-music" src="musica.mp3" autoplay loop></audio>
 
-    const botoesMateria = document.querySelectorAll(".btnMateria1");
-    botoesMateria.forEach(el => el.style.display = "none");
+    <!-- Seletor de temas -->
+    <div id="theme-selector">
+        <button onclick="changeTheme('light')">Modo Claro</button>
+        <button onclick="changeTheme('dark')">Modo Escuro</button>
+        <button onclick="changeTheme('pixel')">Pixel Art</button>
+        <button onclick="changeTheme('custom')">Personalizado</button>
+    </div>
 
-    const conteudosMateria = document.querySelectorAll(".conteudoMateria1");
-    conteudosMateria.forEach(el => el.style.display = "none");
+    <div class="container">
+        <h1>Matérias do técnico</h1>
+        <p>Selecione uma opção para prosseguir</p>
 
-    const botaoMateria = document.getElementById(`botao-${subjectId}-materia1`);
-    if (botaoMateria) botaoMateria.style.display = "block";
+        <!-- Botões das matérias (superior) -->
+        <div class="botoes-esquerda">
+            <button class="botoesbutton" onclick="alterarConteudo('AMC', 'Detalhes da AMC', 'amc')">AMC</button>
+            <button class="botoesbutton" onclick="alterarConteudo('GT', 'Detalhes da GT', 'gt')">GT</button>
+            <button class="botoesbutton" onclick="alterarConteudo('NR', 'Detalhes da NR', 'nr')">NR</button>
+            <button class="botoesbutton" onclick="alterarConteudo('POO JAVA', 'Detalhes da POO JAVA', 'poo')">POO JAVA</button>
+        </div>
 
-    document.querySelector(".menu-amigos").style.display = "none";
+        <!-- Botões das matérias (inferior, agora funcionais) -->
+        <div class="botoes-direita">
+            <button class="botoesbutton" onclick="alterarConteudo('PROG WEB', 'Detalhes de PROG WEB', 'progweb')">PROG WEB</button>
+            <button class="botoesbutton" onclick="alterarConteudo('HTML CSS', 'Detalhes de HTML CSS', 'htmlcss')">HTML CSS</button>
+            <button class="botoesbutton" onclick="alterarConteudo('LOG PR', 'Detalhes de LOG PR', 'logpr')">LOG PR</button>
+            <button class="botoesbutton" onclick="alterarConteudo('SO', 'Detalhes de SO', 'so')">SO</button>
+        </div>
+    </div>
 
-    // Garante que a área de conteúdo correspondente seja exibida
-    const conteudoArea = document.getElementById(`conteudo-${subjectId}-materia1`);
-    if (conteudoArea) conteudoArea.style.display = "block";
-}
-
-function changeTheme(theme) {
-    document.body.classList.remove("theme-light", "theme-dark", "theme-pixel", "theme-custom");
-    document.body.classList.add("theme-" + theme);
-
-    if (theme === "light" || theme === "dark") {
-        document.getElementById("custom-bg").style.display = "none";
-        document.body.style.backgroundImage = "";
-    } else if (theme === "pixel") {
-        document.getElementById("custom-bg").style.display = "none";
-        document.body.style.backgroundImage = "url('pixel-art.jpg')";
-    } else if (theme === "custom") {
-        document.getElementById("custom-bg").style.display = "block";
-        document.body.style.backgroundImage = "";
-    }
-}
+    <div id="conteudo-exibir"></div>
+</body>
+</html>
