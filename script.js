@@ -13,9 +13,11 @@ function alterarConteudo(titulo, detalhes, subjectId) {
 
     document.querySelector(".menu-amigos").style.display = "none";
 
-    // Garante que a área de conteúdo correspondente seja exibida
     const conteudoArea = document.getElementById(`conteudo-${subjectId}-materia1`);
     if (conteudoArea) conteudoArea.style.display = "block";
+
+    // Esconder link do MediaFire ao selecionar matéria
+    document.getElementById("mediafire-link").style.display = "none";
 }
 
 function changeTheme(theme) {
