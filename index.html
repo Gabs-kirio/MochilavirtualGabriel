@@ -1,48 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matérias do técnico</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body class="theme-light">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+    <!-- Importação do Font Awesome para os ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="theme-light">
     <!-- Música de fundo -->
     <audio id="background-music" src="musica.mp3" autoplay loop></audio>
 
     <!-- Seletor de temas -->
     <div id="theme-selector">
-        <button onclick="changeTheme('light')">Modo Claro</button>
-        <button onclick="changeTheme('dark')">Modo Escuro</button>
-        <button onclick="changeTheme('pixel')">Pixel Art</button>
-        <button onclick="changeTheme('custom')">Personalizado</button>
+      <button onclick="changeTheme('light')">Modo Claro</button>
+      <button onclick="changeTheme('dark')">Modo Escuro</button>
+      <button onclick="changeTheme('pixel')">Pixel Art</button>
+      <button onclick="changeTheme('custom')">Personalizado</button>
     </div>
 
-    <div class="container" id="container">
-        <h1>Matérias do técnico</h1>
-        <p>Selecione uma opção para prosseguir</p>
+    <!-- Container principal -->
+    <div class="container">
+      <h1>Matérias do técnico</h1>
+      <p>Selecione uma opção para prosseguir</p>
 
-        <!-- Link para MediaFire -->
-        <a href="https://www.mediafire.com/file/dpdakf8yfshb03p/Projeto_java.jar/file" target="_blank" id="mediafire-link" class="botao-conteudo">Baixar Materiais</a>
+      <!-- Botão MediaFire dentro do container (inicialmente visível) -->
+      <div id="mediafire-container">
+        <a
+          id="mediafire-btn"
+          href="https://www.mediafire.com/file/gcg24u5y64r772v/Projeto_java.jar/file"
+          target="_blank"
+          >📥 Download Material</a
+        >
+      </div>
 
-        <!-- Botões das matérias (superior) -->
-        <div class="botoes-esquerda">
-            <button class="botoesbutton" onclick="alterarConteudo('AMC', 'Detalhes da AMC', 'amc')">AMC</button>
-            <button class="botoesbutton" onclick="alterarConteudo('GT', 'Detalhes da GT', 'gt')">GT</button>
-            <button class="botoesbutton" onclick="alterarConteudo('NR', 'Detalhes da NR', 'nr')">NR</button>
-            <button class="botoesbutton" onclick="alterarConteudo('POO JAVA', 'Detalhes da POO JAVA', 'poo')">POO JAVA</button>
-        </div>
+      <!-- Botões das matérias - parte superior -->
+      <div class="botoes-esquerda">
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('AMC', 'Detalhes da AMC', 'amc')"
+        >
+          <i class="fas fa-desktop"></i> AMC
+        </button>
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('GT', 'Detalhes da GT', 'gt')"
+        >
+          <i class="fas fa-clock"></i> GT
+        </button>
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('NR', 'Detalhes da NR', 'nr')"
+        >
+          <i class="fas fa-robot"></i> NR
+        </button>
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('POO JAVA', 'Detalhes da POO JAVA', 'poo')"
+        >
+          <i class="fas fa-coffee"></i> POO JAVA
+        </button>
+      </div>
 
-        <!-- Botões das matérias (inferior) -->
-        <div class="botoes-direita">
-            <button class="botoesbutton" onclick="alterarConteudo('PROG WEB', 'Detalhes de PROG WEB', 'progweb')">PROG WEB</button>
-            <button class="botoesbutton" onclick="alterarConteudo('HTML CSS', 'Detalhes de HTML CSS', 'htmlcss')">HTML CSS</button>
-            <button class="botoesbutton" onclick="alterarConteudo('LOG PR', 'Detalhes de LOG PR', 'logpr')">LOG PR</button>
-            <button class="botoesbutton" onclick="alterarConteudo('SO', 'Detalhes de SO', 'so')">SO</button>
-        </div>
+      <!-- Botões das matérias - parte inferior -->
+      <div class="botoes-direita">
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('PROG WEB', 'Detalhes de PROG WEB', 'progweb')"
+        >
+          <i class="fas fa-wifi"></i> PROG WEB
+        </button>
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('HTML CSS', 'Detalhes de HTML CSS', 'htmlcss')"
+        >
+          <i class="fas fa-h"></i> HTML CSS
+        </button>
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('LOG PR', 'Detalhes de LOG PR', 'logpr')"
+        >
+          <i class="fas fa-brain"></i> LOG PR
+        </button>
+        <button
+          class="botoesbutton"
+          onclick="alterarConteudo('SO', 'Detalhes de SO', 'so')"
+        >
+          <i class="fas fa-cogs"></i> SO
+        </button>
+      </div>
     </div>
-
+    <div id="custom-bg">
+      <div>
+        <label for="custom-color1">Cor 1:</label>
+        <input type="color" id="custom-color1" value="#ff0000" />
+      </div>
+      <div>
+        <label for="custom-color2">Cor 2:</label>
+        <input type="color" id="custom-color2" value="#00ff00" />
+      </div>
+      <div>
+        <label for="custom-color3">Cor 3:</label>
+        <input type="color" id="custom-color3" value="#0000ff" />
+      </div>
+      <button onclick="applyCustomBackground()">Aplicar</button>
+    </div>
     <div id="conteudo-exibir"></div>
-</body>
+  </body>
 </html>
