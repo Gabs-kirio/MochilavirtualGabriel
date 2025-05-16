@@ -1,4 +1,29 @@
-/* Estilização geral sem definir o fundo, pois os temas determinarão a aparência */
+/* Estilo dos botões do seletor de temas */
+#theme-selector {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+#theme-selector button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-selector button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Estilo geral do body e do container */
 body {
   margin: 0;
   padding: 0;
@@ -11,50 +36,6 @@ body {
   transition: background 0.5s ease-in-out;
 }
 
-/* Temas de fundo */
-/* Modo Claro */
-body.theme-light {
-  background-color: #f5f5f5;
-  background-image: none;
-}
-
-/* Modo Escuro */
-body.theme-dark {
-  background-color: #121212;
-  background-image: none;
-}
-
-/* Modo Pixel Art - o fundo padrão será aplicado pelo JS */
-body.theme-pixel {
-  background-color: #000;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* Seletor de temas (canto superior direito) */
-#theme-selector {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
-  z-index: 100;
-}
-
-#theme-selector button {
-  background: #fff;
-  border: 1px solid #333;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#theme-selector button:hover {
-  background: #ccc;
-}
-
-/* Container central do conteúdo */
 .container {
   background-color: white;
   width: 75%;
@@ -67,128 +48,134 @@ body.theme-pixel {
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-sizing: border-box;
   position: relative;
-  overflow-y: auto; /* Permite scroll se o conteúdo ultrapassar */
+  overflow-y: auto;
 }
 
-/* Posicionamento dos botões laterais */
+/* Botão MediaFire */
+#mediafire-container {
+  text-align: center;
+  margin-top: 15px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#mediafire-btn {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#mediafire-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Botões das matérias */
 .botoes-esquerda,
 .botoes-direita {
   display: flex;
-  flex-direction: row;
   gap: 10px;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .botoes-esquerda {
   top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .botoes-direita {
   bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Estilização dos botões principais */
 .botoesbutton {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #fff;
-  color: #333;
+  background-color: white;
+  color: black;
   transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.botoesbutton i {
+  font-size: 18px;
 }
 
 .botoesbutton:hover {
-  background-color: blue;
+  background-color: black;
   color: white;
 }
 
-/* Estilos para os botões de exibir conteúdos e áreas de conteúdo */
-.conteudo-aula,
-.botao-conteudo {
-  display: none; /* Oculto por padrão */
-  margin-top: 20px;
-  font-size: 18px;
-  color: #333;
+/* Temas para o body */
+body.theme-light {
+  background-color: #f5f5f5;
 }
 
-/* Estilo para os botões "materia 1" */
-.botao-conteudo {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #fff;
-  color: #333;
-  transition: background-color 0.3s, color 0.3s;
+body.theme-dark {
+  background-color: #121212;
 }
 
-.botao-conteudo:hover {
-  background-color: blue;
-  color: white;
+body.theme-pixel {
+  /* Modo Pixel Art: imagem de fundo definida pelo JS */
+  background-color: #000;
+  background-image: url('pixel-art.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-/* Efeito fade para conteúdos (opcional) */
-.fade {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+/* Custom: fundo personalizado via gradiente, definido pelo JS */
+body.theme-custom {
+  /* O fundo será definido dinamicamente */
 }
 
-.fade.show {
-  opacity: 1;
-}
-
-/* Estilo para o menu dos amigos */
-.menu-amigos {
-  margin-top: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.menu-amigos p {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.menu-amigos ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-amigos li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.menu-amigos a {
-  text-decoration: none;
-  color: blue;
-  border: 1px solid blue;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.menu-amigos a:hover {
-  background-color: blue;
-  color: white;
-}
-/* Link do MediaFire */
-#mediafire-link {
-  display: block;
-  margin-top: 20px;
+/* Painel de fundo personalizado */
+#custom-bg {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: white;
+  border: 2px solid black;
   padding: 10px;
-  border: 1px solid blue;
   border-radius: 5px;
-  text-decoration: none;
-  color: blue;
+  z-index: 100;
 }
 
-#mediafire-link:hover { background-color: blue; color: white; }
+#custom-bg div {
+  margin-bottom: 8px;
+}
+
+#custom-bg label {
+  margin-right: 5px;
+}
+
+#custom-bg input {
+  vertical-align: middle;
+}
+
+#custom-bg button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#custom-bg button:hover {
+  background-color: black;
+  color: white;
+}
