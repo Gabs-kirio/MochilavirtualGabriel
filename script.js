@@ -9,8 +9,45 @@ function alterarConteudo(titulo, detalhes, subjectId) {
     mediafireContainer.style.display = "none";
   }
   // Aqui você pode incluir outras ações específicas para cada matéria
+      // Exibe o botão "Ver Conteúdo"
+    var btnExibirConteudo = document.getElementById("exibir-conteudo-btn");
+    btnExibirConteudo.style.display = "block";
+    btnExibirConteudo.setAttribute("data-subject", subjectId);
+
+    // Oculta a área de conteúdo
+    document.getElementById("conteudo-materia").style.display = "none";
 }
 
+function exibirConteudo() {
+     var conteudoMateria = document.getElementById("conteudo-materia");
+    var btnExibirConteudo = document.getElementById("exibir-conteudo-btn");
+   // Se o conteúdo já estiver visível, oculta ele e muda o texto do botão
+    if (conteudoMateria.style.display === "block") {
+        conteudoMateria.style.display = "none";
+        btnExibirConteudo.innerText = "📖 Ver Conteúdo"; // Texto volta ao padrão
+    } else {
+        // Caso contrário, exibe o conteúdo e muda o texto do botão para "Fechar Conteúdo"
+        var subjectId = btnExibirConteudo.getAttribute("data-subject");
+    var conteudos = {
+        "amc": { titulo: "Conteúdo AMC", descricao: "Aqui estão os detalhes da matéria de Arquitetura e Manutenção de Computadores." },
+        "gt": { titulo: "Conteúdo GT", descricao: "Aqui estão os detalhes da matéria de Gestão do Tempo." },
+        "nr": { titulo: "Conteúdo NR", descricao: "Aqui estão os detalhes da matéria de Noção de Robótica." },
+        "poo": { titulo: "Conteúdo POO JAVA", descricao: "Aqui estão os detalhes da matéria de Programação Orientada a Objetos com Java." },
+        "progweb": { titulo: "Conteúdo PROG WEB", descricao: "Importancia da programação web: Hoje em dia, a internet não é mais um brinquedo, mas sim uma ferramenta, logo, a prog web (criação de sites e sistemas) é uma habilidade essencial para trabalhadores do 'novo mundo'. A programação web possui grandes vantagens como: Alta empregabilidade, autonomia, capacidade de resolver problemas, base de empregabilidade e inclusão moral e social. Então, estudar prog web é mais que aprender uma profissão, é entender sobre como o mundo funciona" },
+        "htmlcss": { titulo: "Conteúdo HTML & CSS", descricao: "Aqui estão os detalhes da matéria de HTML & CSS." },
+        "logpr": { titulo: "Conteúdo LOG PR", descricao: "Aqui estão os detalhes da matéria de Lógica de Programação." },
+        "so": { titulo: "Conteúdo SO", descricao: "Aqui estão os detalhes da matéria de Sistemas Operacionais." }
+    };
+
+   if (conteudos[subjectId]) {
+            document.getElementById("titulo-conteudo").innerText = conteudos[subjectId].titulo;
+            document.getElementById("descricao-conteudo").innerText = conteudos[subjectId].descricao;
+            conteudoMateria.style.display = "block";
+            btnExibirConteudo.innerText = "❌ Fechar Conteúdo"; // Altera o texto do botão
+        }
+    }
+
+}
 function changeTheme(theme) {
   // Remove todos os temas atuais e adiciona o novo tema
   document.body.classList.remove("theme-light", "theme-dark", "theme-pixel", "theme-custom");
@@ -92,4 +129,5 @@ window.addEventListener("load", function () {
   if (savedColors && document.body.classList.contains("theme-custom")) {
     applySavedCustomBackground();
   }
+  
 });
