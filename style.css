@@ -139,6 +139,14 @@ body.theme-pixel {
 body.theme-custom {
   /* O fundo será definido dinamicamente */
 }
+.botoesbutton i {
+    font-size: 18px;
+}
+
+.botoesbutton:hover {
+    background-color: black;
+    color: white;
+}
 
 /* Painel de fundo personalizado */
 #custom-bg {
@@ -178,4 +186,13 @@ body.theme-custom {
 #custom-bg button:hover {
   background-color: black;
   color: white;
+}
+/* Área de conteúdo */
+.conteudo-box {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    width: 90%;
+    text-align: left;
+    margin-top: 15px;
 }
