@@ -135,10 +135,6 @@ body.theme-pixel {
   background-repeat: no-repeat;
 }
 
-/* Custom: fundo personalizado via gradiente, definido pelo JS */
-body.theme-custom {
-  /* O fundo será definido dinamicamente */
-}
 .botoesbutton i {
     font-size: 18px;
 }
@@ -147,6 +143,48 @@ body.theme-custom {
     background-color: black;
     color: white;
 }
+/* Estilização do botão Temas */
+#temas-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Quadro de temas (inicialmente oculto) */
+#quadro-temas {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Estilo dos botões dentro do quadro */
+#quadro-temas button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#quadro-temas button:hover {
+    background-color: black;
+    color: white;
+}
+
 
 /* Painel de fundo personalizado */
 #custom-bg {
@@ -189,10 +227,42 @@ body.theme-custom {
 }
 /* Área de conteúdo */
 .conteudo-box {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 5px;
     width: 90%;
     text-align: left;
     margin-top: 15px;
+}
+/* Tema Matemática */
+body.theme-math {
+    background-color: #001f3f;
+    color: #ffffff;
+    font-family: "Courier New", monospace;
+    position: relative;
+    overflow: hidden;
+}
+/* Título no tema Matemática */
+body.theme-math h1#titulo-principal {
+    color: black;
+}
+/* Título no tema Matemática */
+body.theme-math p {
+    color: black;
+}
+
+
+/* Estilo das fórmulas animadas */
+.math-formula {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeFormula 6s infinite;
+}
+
+/* Animação de fade-in e fade-out */
+@keyframes fadeFormula {
+    0% { opacity: 0; transform: translateY(20px); }
+    50% { opacity: 1; transform: translateY(0px); }
+    100% { opacity: 0; transform: translateY(-20px); }
 }
