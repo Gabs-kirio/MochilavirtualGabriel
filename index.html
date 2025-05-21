@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matérias do técnico</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="theme-light">
     <audio id="background-music" src="musica.mp3" autoplay loop></audio>
 
-    <div id="theme-selector">
-        <button onclick="changeTheme('light')">Modo Claro</button>
-        <button onclick="changeTheme('dark')">Modo Escuro</button>
-        <button onclick="changeTheme('pixel')">Pixel Art</button>
-        <button onclick="changeTheme('custom')">Personalizado</button>
-    </div>
+ <button id="temas-btn" onclick="toggleTemas()">🎨 Temas</button>
+
+<!-- Quadro de seleção de temas (inicialmente oculto) -->
+<div id="quadro-temas">
+    <button onclick="changeTheme('light')">Modo Claro</button>
+    <button onclick="changeTheme('dark')">Modo Escuro</button>
+    <button onclick="changeTheme('pixel')">Pixel Art</button>
+    <button onclick="changeTheme('math')">Matemática</button>
+    <button onclick="changeTheme('custom')">Personalizado</button>
+</div>
 
     <div class="container">
         <h1 id="titulo-principal">Matérias do técnico</h1>
         <p id="instrucoes">Selecione uma opção para prosseguir</p>
 
         <div id="mediafire-container">
-            <a id="mediafire-btn" href="https://www.mediafire.com/file/vtu1doi6euzpmoc/Projeto_java.jar/file" target="_blank">📥 Download Material</a>
+            <a id="mediafire-btn" href="https://www.mediafire.com/" target="_blank">📥 Download Material</a>
         </div>
 
         <!-- Botões das matérias -->
