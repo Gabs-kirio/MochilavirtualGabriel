@@ -266,3 +266,112 @@ body.theme-math p {
     50% { opacity: 1; transform: translateY(0px); }
     100% { opacity: 0; transform: translateY(-20px); }
 }
+/* Estilização do botão Chat */
+#chat-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Caixa de chat */
+#chatbox {
+    position: fixed;
+    bottom: 60px;
+    left: 20px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    width: 250px;
+    z-index: 9999; /* Garante que o chatbox fique sobre todos os elementos */
+}
+
+
+/* Caixa de mensagens */
+#chat-messages {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+}
+
+/* Campo de entrada */
+#chat-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.message-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.message-item button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+/* Tema Claro */
+body.theme-light #chatbox, body.theme-light #chat-btn {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+/* Tema Escuro */
+body.theme-dark #chatbox, body.theme-dark #chat-btn {
+    background-color: #001f3f; /* Azul escuro */
+    border: 2px solid white;
+    color: white;
+}
+
+/* Tema Pixel Art */
+body.theme-pixel #chatbox, body.theme-pixel #chat-btn {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+
+/* Tema Matemática */
+body.theme-math #chatbox {
+    background-image: url('plano-cartesiano.png'); /* Fundo do plano cartesiano */
+    background-size: cover;
+    border: 2px solid white;
+    color: white;
+}
+body.theme-math #chat-btn {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+
+/* Tema Personalizado */
+body.theme-custom #chatbox {
+    background-image: inherit; /* Segue o fundo personalizado */
+    border: 2px solid white;
+    color: white;
+}
+body.theme-custom #chat-btn {
+    background-image: inherit;
+    border: 2px solid white;
+    color: white;
+}
+body.theme-custom #chatbox, body.theme-custom #chat-btn {
+    background-image: inherit; /* Segue o fundo personalizado */
+    border: 2px solid white;
+    color: white;
+}
