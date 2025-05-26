@@ -1,178 +1,377 @@
-// Função para alterar o conteúdo ao selecionar uma matéria
-function alterarConteudo(titulo, detalhes, subjectId) {
-    document.getElementById("titulo-principal").innerText = titulo;
-    document.getElementById("instrucoes").innerText = detalhes;
-
-    // Esconde o botão "Download Material"
-    document.getElementById("mediafire-container").style.display = "none";
-
-    // Exibe o botão "Ver Conteúdo"
-    var btnExibirConteudo = document.getElementById("exibir-conteudo-btn");
-    btnExibirConteudo.style.display = "block";
-    btnExibirConteudo.setAttribute("data-subject", subjectId);
-
-    // Oculta a área de conteúdo ao selecionar uma nova matéria
-    document.getElementById("conteudo-materia").style.display = "none";
-
-    // Redefine o texto do botão para "📖 Ver Conteúdo"
-    btnExibirConteudo.innerText = "📖 Ver Conteúdo";
+/* Estilo dos botões do seletor de temas */
+#theme-selector {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
 }
 
-// Função para exibir/ocultar o conteúdo da matéria
-function exibirConteudo() {
-    var conteudoMateria = document.getElementById("conteudo-materia");
-    var btnExibirConteudo = document.getElementById("exibir-conteudo-btn");
-
-    // Se o conteúdo já estiver visível, oculta ele e muda o texto do botão
-    if (conteudoMateria.style.display === "block") {
-        conteudoMateria.style.display = "none";
-        btnExibirConteudo.innerText = "📖 Ver Conteúdo"; // Texto volta ao padrão
-    } else {
-        // Caso contrário, exibe o conteúdo e muda o texto do botão para "Fechar Conteúdo"
-        var subjectId = btnExibirConteudo.getAttribute("data-subject");
-
-        var conteudos = {
-            "amc": { titulo: "Conteúdo AMC", descricao: "Aqui estão os detalhes da matéria de Arquitetura e Manutenção de Computadores." },
-            "gt": { titulo: "Conteúdo GT", descricao: "Aqui estão os detalhes da matéria de Gestão do Tempo." },
-            "nr": { titulo: "Conteúdo NR", descricao: "A robótica é um campo multidisciplinar que envolve o design, construção, operação e aplicação de robôs. Este ramo da engenharia visa criar máquinas inteligentes que podem auxiliar os seres humanos em diversas tarefas e setores." },
-            "poo": { titulo: "Conteúdo POO JAVA", descricao: "Aqui estão os detalhes da matéria de Programação Orientada a Objetos com Java." },
-            "progweb": { titulo: "Conteúdo PROG WEB", descricao: "Importancia da programação web: Hoje em dia, a internet não é mais um brinquedo, mas sim uma ferramenta, logo, a prog web (criação de sites e sistemas) é uma habilidade essencial para trabalhadores do 'novo mundo'. A programação web possui grandes vantagens como: Alta empregabilidade, autonomia, capacidade de resolver problemas, base de empregabilidade e inclusão moral e social. Então, estudar prog web é mais que aprender uma profissão, é entender sobre como o mundo funciona" },
-            "htmlcss": { titulo: "Conteúdo HTML & CSS", descricao: "Aqui estão os detalhes da matéria de HTML & CSS." },
-            "logpr": { titulo: "Conteúdo LOG PR", descricao: "Aqui estão os detalhes da matéria de Lógica de Programação." },
-            "so": { titulo: "Conteúdo SO", descricao: "Aqui estão os detalhes da matéria de Sistemas Operacionais." }
-        };
-
-        if (conteudos[subjectId]) {
-            document.getElementById("titulo-conteudo").innerText = conteudos[subjectId].titulo;
-            document.getElementById("descricao-conteudo").innerText = conteudos[subjectId].descricao;
-            conteudoMateria.style.display = "block";
-            btnExibirConteudo.innerText = "❌ Fechar Conteúdo"; // Altera o texto do botão
-        }
-    }
+#theme-selector button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-// Função para alterar o tema e salvar no localStorage
-function changeTheme(theme) {
-    // Remove os temas anteriores e aplica o novo
-    document.body.classList.remove("theme-light", "theme-dark", "theme-pixel", "theme-custom", "theme-math");
-    document.body.classList.add("theme-" + theme);
-
-    // Salva o tema escolhido no localStorage
-    localStorage.setItem("selectedTheme", theme);
-
-    var customBg = document.getElementById("custom-bg");
-
-    if (theme === "light" || theme === "dark" || theme === "pixel" || theme === "math") {
-        if (customBg) customBg.style.display = "none";
-        if (theme === "pixel") {
-            document.body.style.backgroundImage = "url('pixel-art.jpg')";
-        } else if (theme === "math") {
-            document.body.style.backgroundImage = "url('math-bg.png')";
-            createMathFormulas(); // Ativa as fórmulas matemáticas
-        } else {
-            document.body.style.backgroundImage = "";
-        }
-    } else if (theme === "custom") {
-        if (customBg) customBg.style.display = "block";
-        applySavedCustomBackground();
-    }
+#theme-selector button:hover {
+  background-color: black;
+  color: white;
 }
 
-// Função para aplicar o último tema salvo ao carregar a página
-function applySavedTheme() {
-    var savedTheme = localStorage.getItem("selectedTheme");
-
-    if (savedTheme) {
-        changeTheme(savedTheme);
-    } else {
-        changeTheme("light"); // Se nenhum tema estiver salvo, usa o tema claro como padrão
-    }
+/* Estilo geral do body e do container */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  transition: background 0.5s ease-in-out;
 }
 
-// Chama a função ao carregar a página para aplicar o último tema salvo
-window.addEventListener("load", applySavedTheme);
-
-// Função para gerar fórmulas matemáticas animadas no tema Matemática
-function createMathFormulas() {
-    if (!document.body.classList.contains("theme-math")) return; // Se não for o tema Matemático, sai da função
-
-    var formulas = [
-        "E = mc²",
-        "a² + b² = c²",
-        "sin(θ) = oposto/hipotenusa",
-        "f(x) = ax² + bx + c",
-        "∫ x dx = x²/2 + C",
-        "Δ = b² - 4ac",
-        "Σ (n=1) ^∞ 1/n² = π²/6"
-    ];
-
-    var body = document.body;
-
-    // Remove fórmulas existentes para evitar sobrecarga
-    removeMathFormulas();
-
-    formulas.forEach((formulaText) => {
-        var formula = document.createElement("div");
-        formula.className = "math-formula";
-        formula.innerText = formulaText;
-
-        // Define posição aleatória na tela
-        formula.style.top = Math.random() * window.innerHeight + "px";
-        formula.style.left = Math.random() * window.innerWidth + "px";
-
-        body.appendChild(formula);
-    });
+.container {
+  background-color: white;
+  width: 75%;
+  height: 70vh;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow-y: auto;
 }
 
-// Função para remover todas as fórmulas matemáticas
-function removeMathFormulas() {
-    var existingFormulas = document.querySelectorAll(".math-formula");
-    existingFormulas.forEach(formula => formula.remove());
+/* Botão MediaFire */
+#mediafire-container {
+  text-align: center;
+  margin-top: 15px;
+  transition: opacity 0.3s ease-in-out;
 }
 
-// Exibe fórmulas matemáticas a cada 5 segundos, mas apenas se o tema Matemático estiver ativo
-setInterval(() => {
-    if (document.body.classList.contains("theme-math")) {
-        createMathFormulas();
-    }
-}, 5000);
+#mediafire-btn {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-// Modificação na função de troca de temas para remover as fórmulas ao mudar de tema
-function changeTheme(theme) {
-    document.body.classList.remove("theme-light", "theme-dark", "theme-pixel", "theme-custom", "theme-math");
-    document.body.classList.add("theme-" + theme);
+#mediafire-btn:hover {
+  background-color: black;
+  color: white;
+}
 
-    localStorage.setItem("selectedTheme", theme);
+/* Botões das matérias */
+.botoes-esquerda,
+.botoes-direita {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+}
 
-    var customBg = document.getElementById("custom-bg");
+.botoes-esquerda {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    if (theme === "math") {
-        createMathFormulas(); // Gera fórmulas matemáticas
-    } else {
-        removeMathFormulas(); // Remove as fórmulas se outro tema for escolhido
-    }
+.botoes-direita {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    if (theme === "light" || theme === "dark" || theme === "pixel") {
-        if (customBg) customBg.style.display = "none";
-        if (theme === "pixel") {
-            document.body.style.backgroundImage = "url('pixel-art.jpg')";
-        } else {
-            document.body.style.backgroundImage = "";
-        }
-    } else if (theme === "custom") {
-        if (customBg) customBg.style.display = "block";
-        applySavedCustomBackground();
-    }
+.botoesbutton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.botoesbutton i {
+  font-size: 18px;
+}
+
+.botoesbutton:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Temas para o body */
+body.theme-light {
+  background-color: #f5f5f5;
+}
+
+body.theme-dark {
+  background-color: #121212;
+}
+
+body.theme-pixel {
+  /* Modo Pixel Art: imagem de fundo definida pelo JS */
+  background-color: #000;
+  background-image: url('pixel-art.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.botoesbutton i {
+    font-size: 18px;
+}
+
+.botoesbutton:hover {
+    background-color: black;
+    color: white;
+}
+/* Estilização do botão Temas */
+#temas-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Quadro de temas (inicialmente oculto) */
+#quadro-temas {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Estilo dos botões dentro do quadro */
+#quadro-temas button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#quadro-temas button:hover {
+    background-color: black;
+    color: white;
 }
 
 
-function toggleTemas() {
-    var quadroTemas = document.getElementById("quadro-temas");
+/* Painel de fundo personalizado */
+#custom-bg {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 100;
+}
 
-    // Alterna entre mostrar e ocultar
-    if (quadroTemas.style.display === "none" || quadroTemas.style.display === "") {
-        quadroTemas.style.display = "flex";
-    } else {
-        quadroTemas.style.display = "none";
-    }
+#custom-bg div {
+  margin-bottom: 8px;
+}
+
+#custom-bg label {
+  margin-right: 5px;
+}
+
+#custom-bg input {
+  vertical-align: middle;
+}
+
+#custom-bg button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#custom-bg button:hover {
+  background-color: black;
+  color: white;
+}
+/* Área de conteúdo */
+.conteudo-box {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    width: 90%;
+    text-align: left;
+    margin-top: 15px;
+}
+/* Tema Matemática */
+body.theme-math {
+    background-color: #001f3f;
+    color: #ffffff;
+    font-family: "Courier New", monospace;
+    position: relative;
+    overflow: hidden;
+}
+/* Título no tema Matemática */
+body.theme-math h1#titulo-principal {
+    color: black;
+}
+/* Título no tema Matemática */
+body.theme-math p {
+    color: black;
+}
+
+
+/* Estilo das fórmulas animadas */
+.math-formula {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeFormula 6s infinite;
+}
+
+/* Animação de fade-in e fade-out */
+@keyframes fadeFormula {
+    0% { opacity: 0; transform: translateY(20px); }
+    50% { opacity: 1; transform: translateY(0px); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+/* Estilização do botão Chat */
+#chat-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Caixa de chat */
+#chatbox {
+    position: fixed;
+    bottom: 60px;
+    left: 20px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    width: 250px;
+    z-index: 9999; /* Garante que o chatbox fique sobre todos os elementos */
+}
+
+
+/* Caixa de mensagens */
+#chat-messages {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+}
+
+/* Campo de entrada */
+#chat-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.message-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.message-item button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+/* Tema Claro */
+body.theme-light #chatbox, body.theme-light #chat-btn {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+/* Tema Escuro */
+body.theme-dark #chatbox, body.theme-dark #chat-btn {
+    background-color: #001f3f; /* Azul escuro */
+    border: 2px solid white;
+    color: white;
+}
+
+/* Tema Pixel Art */
+body.theme-pixel #chatbox, body.theme-pixel #chat-btn {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+
+/* Tema Matemática */
+body.theme-math #chatbox {
+    background-image: url('plano-cartesiano.png'); /* Fundo do plano cartesiano */
+    background-size: cover;
+    border: 2px solid white;
+    color: white;
+}
+body.theme-math #chat-btn {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+
+/* Tema Personalizado */
+body.theme-custom #chatbox {
+    background-image: inherit; /* Segue o fundo personalizado */
+    border: 2px solid white;
+    color: white;
+}
+body.theme-custom #chat-btn {
+    background-image: inherit;
+    border: 2px solid white;
+    color: white;
+}
+body.theme-custom #chatbox, body.theme-custom #chat-btn {
+    background-image: inherit; /* Segue o fundo personalizado */
+    border: 2px solid white;
+    color: white;
 }
