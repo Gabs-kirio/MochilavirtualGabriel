@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matérias do técnico</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="theme-light">
     <audio id="background-music" src="musica.mp3" autoplay loop></audio>
 
  <button id="temas-btn" onclick="toggleTemas()">🎨 Temas</button>
+ <button id="chat-btn" onclick="toggleChat()">💬 Chat</button>
+
+<!-- Caixa de chat (inicialmente oculta) -->
+<div id="chatbox">
+    <h3>Comentários</h3>
+    <div id="chat-messages"></div> <!-- Aqui serão exibidas as mensagens -->
+    <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+    <button onclick="sendMessage()">Enviar</button>
+</div>
+<div id="chatbox">
+    <h3>Comentários</h3>
+    <div id="chat-messages"></div> <!-- Aqui serão exibidas as mensagens -->
+    <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+    <button onclick="sendMessage()">Enviar</button>
+</div>
+
 
 <!-- Quadro de seleção de temas (inicialmente oculto) -->
 <div id="quadro-temas">
@@ -20,6 +36,7 @@
     <button onclick="changeTheme('pixel')">Pixel Art</button>
     <button onclick="changeTheme('math')">Matemática</button>
     <button onclick="changeTheme('custom')">Personalizado</button>
+     <button onclick="toggleMathTheme()">Evento especial</button>
 </div>
 
     <div class="container">
