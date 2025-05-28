@@ -1,3 +1,4 @@
+
 /* Estilo dos botões do seletor de temas */
 #theme-selector {
   position: fixed;
@@ -374,4 +375,7 @@ body.theme-custom #chatbox, body.theme-custom #chat-btn {
     background-image: inherit; /* Segue o fundo personalizado */
     border: 2px solid white;
     color: white;
+}
+#conteudo-materia {
+    background-color: rgba(255, 255, 255, 0.7); /* Branco com 70% de transparência */
 }
