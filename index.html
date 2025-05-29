@@ -14,7 +14,9 @@
 
  <button id="temas-btn" onclick="toggleTemas()">🎨 Temas</button>
  <button id="chat-btn" onclick="toggleChat()">💬 Chat</button>
-<button id="voltar-btn" onclick="voltarParaInicio()">↩️</button>
+ <button id="voltar-btn" onclick="voltarParaInicio()">↩️</button>
+
+
 
 <!-- Caixa de chat (inicialmente oculta) -->
 <div id="chatbox">
@@ -44,6 +46,10 @@
     <div class="container">
         <h1 id="titulo-principal">Matérias do técnico</h1>
         <p id="instrucoes">Selecione uma opção para prosseguir</p>
+<div id="download-container" class="download-box" style="display: none;">
+    <a href="href=Projeto Java.jar" target="_blank" id="download-btn">📥 Baixar Material de POO Java</a>
+</div>
+<button id="exibir-conteudo-btn" class="botoesbutton" onclick="exibirConteudo()" style="display: none;">📖 Ver Conteúdo</button>
 
 
 
@@ -63,14 +69,13 @@
         </div>
 
         <!-- Botão para exibir conteúdo -->
-        <button id="exibir-conteudo-btn" class="botoesbutton" onclick="exibirConteudo()" style="display: none;">📖 Ver Conteúdo</button>
-
+        
         <div id="conteudo-materia" class="conteudo-box" style="display: none;">
             <h2 id="titulo-conteudo"></h2>
             <p id="descricao-conteudo"></p>
         </div>
     </div>
-
+ </div>
     <div id="custom-bg">
         <div>
             <label for="custom-color1">Cor 1:</label>
