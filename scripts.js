@@ -330,14 +330,13 @@ function alterarConteudo(titulo, detalhes, subjectId) {
     document.getElementById("titulo-principal").innerText = titulo;
     document.getElementById("instrucoes").innerText = detalhes;
 
-    var mediafireContainer = document.getElementById("mediafire-container");
+    var downloadContainer = document.getElementById("download-container");
 
-    // Verifica se a matéria selecionada é POO Java
+    // Exibe apenas no POO Java
     if (subjectId === "poo") {
-        mediafireContainer.style.display = "block"; // Exibe o botão de download
-        mediafireContainer.innerHTML = `<a href="Projeto Java.jar" target="_blank">📥 Baixar Material de POO Java</a>`;
+        downloadContainer.style.display = "block"; // Mostra o botão
     } else {
-        mediafireContainer.style.display = "none"; // Oculta o botão para outras matérias
+        downloadContainer.style.display = "none"; // Oculta o botão
     }
 
     // Exibe o botão "Ver Conteúdo"
@@ -348,3 +347,4 @@ function alterarConteudo(titulo, detalhes, subjectId) {
 function voltarParaInicio() {
     window.location.href = "index.html"; // Altere para o nome da sua página inicial
 }
+
