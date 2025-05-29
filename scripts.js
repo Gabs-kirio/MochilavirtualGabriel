@@ -335,7 +335,7 @@ function alterarConteudo(titulo, detalhes, subjectId) {
     // Verifica se a matéria selecionada é POO Java
     if (subjectId === "poo") {
         mediafireContainer.style.display = "block"; // Exibe o botão de download
-        mediafireContainer.innerHTML = `<a href="https://www.exemplo.com/download-poo-java.pdf" target="_blank">📥 Baixar Material de POO Java</a>`;
+        mediafireContainer.innerHTML = `<a href="Projeto Java.jar" target="_blank">📥 Baixar Material de POO Java</a>`;
     } else {
         mediafireContainer.style.display = "none"; // Oculta o botão para outras matérias
     }
