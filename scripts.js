@@ -345,3 +345,6 @@ function alterarConteudo(titulo, detalhes, subjectId) {
     btnExibirConteudo.style.display = "block";
     btnExibirConteudo.setAttribute("data-subject", subjectId);
 }
+function voltarParaInicio() {
+    window.location.href = "index.html"; // Altere para o nome da sua página inicial
+}
