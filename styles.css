@@ -397,3 +397,23 @@ body.theme-custom #chatbox, body.theme-custom #chat-btn {
     background-color: white;
     color: black;
 }
+#voltar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Efeito de giro ao passar o mouse */
+#voltar-btn:hover {
+    transform: rotate(-180deg); /* Gira ao passar o mouse */
+    background-color: white;
+    color: black;
+}
