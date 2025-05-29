@@ -326,3 +326,22 @@ function toggleMathTheme() {
         alert("Agora o site abrirá automaticamente no tema Matemática até o dia 30.");
     }
 }
+function alterarConteudo(titulo, detalhes, subjectId) {
+    document.getElementById("titulo-principal").innerText = titulo;
+    document.getElementById("instrucoes").innerText = detalhes;
+
+    var mediafireContainer = document.getElementById("mediafire-container");
+
+    // Verifica se a matéria selecionada é POO Java
+    if (subjectId === "poo") {
+        mediafireContainer.style.display = "block"; // Exibe o botão de download
+        mediafireContainer.innerHTML = `<a href="https://www.exemplo.com/download-poo-java.pdf" target="_blank">📥 Baixar Material de POO Java</a>`;
+    } else {
+        mediafireContainer.style.display = "none"; // Oculta o botão para outras matérias
+    }
+
+    // Exibe o botão "Ver Conteúdo"
+    var btnExibirConteudo = document.getElementById("exibir-conteudo-btn");
+    btnExibirConteudo.style.display = "block";
+    btnExibirConteudo.setAttribute("data-subject", subjectId);
+}
