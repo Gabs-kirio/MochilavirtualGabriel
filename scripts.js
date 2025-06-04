@@ -35,7 +35,7 @@ function exibirConteudo() {
             "amc": { titulo: "Conteúdo AMC", descricao: "Aqui estão os detalhes da matéria de Arquitetura e Manutenção de Computadores." },
             "gt": { titulo: "Conteúdo GT", descricao: "Aqui estão os detalhes da matéria de Gestão do Tempo." },
             "nr": { titulo: "Conteúdo NR", descricao: "A robótica é um campo multidisciplinar que envolve o design, construção, operação e aplicação de robôs. Este ramo da engenharia visa criar máquinas inteligentes que podem auxiliar os seres humanos em diversas tarefas e setores." },
-            "poo": { titulo: "Conteúdo POO JAVA", descricao: "Aqui estão os detalhes da matéria de Programação Orientada a Objetos com Java." },
+            "poo": { titulo: "Conteúdo POO JAVA", descricao: "No meu software, existe uma logica matematica usada por uma conta: o computador faz uma conta de proporção entre as horas livres e a dificuldade na materia colocada, assim gernado as horas semanais de estudo." },
             "progweb": { titulo: "Conteúdo PROG WEB", descricao: "Importancia da programação web: Hoje em dia, a internet não é mais um brinquedo, mas sim uma ferramenta, logo, a prog web (criação de sites e sistemas) é uma habilidade essencial para trabalhadores do 'novo mundo'. A programação web possui grandes vantagens como: Alta empregabilidade, autonomia, capacidade de resolver problemas, base de empregabilidade e inclusão moral e social. Então, estudar prog web é mais que aprender uma profissão, é entender sobre como o mundo funciona" },
             "htmlcss": { titulo: "Conteúdo HTML & CSS", descricao: "Aqui estão os detalhes da matéria de HTML & CSS." },
             "logpr": { titulo: "Conteúdo LOG PR", descricao: "Aqui estão os detalhes da matéria de Lógica de Programação." },
@@ -348,3 +348,31 @@ function voltarParaInicio() {
     window.location.href = "index.html"; // Altere para o nome da sua página inicial
 }
 
+// Seleciona o container central que você deseja controlar o scroll
+const container = document.querySelector('.container');
+
+function alterarConteudo(titulo, detalhes, subjectId) {
+    // Oculta os botões das matérias
+    var botoesEsquerda = document.querySelector('.botoes-esquerda');
+    var botoesDireita = document.querySelector('.botoes-direita');
+    if (botoesEsquerda) botoesEsquerda.style.display = "none";
+    if (botoesDireita) botoesDireita.style.display = "none";
+
+    // Atualiza o título e as instruções com as informações da matéria selecionada
+    document.getElementById("titulo-principal").innerText = titulo;
+    document.getElementById("instrucoes").innerText = detalhes;
+
+    var downloadContainer = document.getElementById("download-container");
+
+    // Exibe o botão de download apenas para a matéria POO JAVA
+    if (subjectId === "poo") {
+        downloadContainer.style.display = "block";
+    } else {
+        downloadContainer.style.display = "none";
+    }
+
+    // Exibe o botão "Ver Conteúdo"
+    var btnExibirConteudo = document.getElementById("exibir-conteudo-btn");
+    btnExibirConteudo.style.display = "block";
+    btnExibirConteudo.setAttribute("data-subject", subjectId);
+}
