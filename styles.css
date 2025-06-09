@@ -146,10 +146,7 @@ body.theme-pixel {
 }
 /* Estilização do botão Temas */
 #temas-btn {
-    position: relative;
-   width: 100%;
-   display: flex;
-    justify-content: center;
+    position: fixed;
     top: 10px;
     left: 10px;
     padding: 10px 20px;
@@ -162,7 +159,10 @@ body.theme-pixel {
 
 /* Quadro de temas (inicialmente oculto) */
 #quadro-temas {
-    position: fixed;
+    position: relative;
+   width: 100%;
+   display: flex;
+    justify-content: center;
     top: 50px;
     left: 10px;
     background-color: white;
