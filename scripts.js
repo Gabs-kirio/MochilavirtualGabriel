@@ -37,7 +37,7 @@ function exibirConteudo() {
             "nr": { titulo: "Conteúdo NR", descricao: "A robótica é um campo multidisciplinar que envolve o design, construção, operação e aplicação de robôs. Este ramo da engenharia visa criar máquinas inteligentes que podem auxiliar os seres humanos em diversas tarefas e setores." },
             "poo": { titulo: "Conteúdo POO JAVA", descricao: "No meu software, existe uma logica matematica usada por uma conta: o computador faz uma conta de proporção entre as horas livres e a dificuldade na materia colocada, assim gernado as horas semanais de estudo." },
             "progweb": { titulo: "Conteúdo PROG WEB", descricao: "Importancia da programação web: Hoje em dia, a internet não é mais um brinquedo, mas sim uma ferramenta, logo, a prog web (criação de sites e sistemas) é uma habilidade essencial para trabalhadores do 'novo mundo'. A programação web possui grandes vantagens como: Alta empregabilidade, autonomia, capacidade de resolver problemas, base de empregabilidade e inclusão moral e social. Então, estudar prog web é mais que aprender uma profissão, é entender sobre como o mundo funciona" },
-            "htmlcss": { titulo: "Conteúdo HTML & CSS", descricao: "Aqui estão os detalhes da matéria de HTML & CSS." },
+            "htmlcss": { titulo: "Conteúdo HTML & CSS", descricao: "Meu site possui os temas, esse esquema de troca de cores do botão, a fonte da letra e os simbolos." },
             "logpr": { titulo: "Conteúdo LOG PR", descricao: "Aqui estão os detalhes da matéria de Lógica de Programação." },
             "so": { titulo: "Conteúdo SO", descricao: "Aqui estão os detalhes da matéria de Sistemas Operacionais." }
         };
