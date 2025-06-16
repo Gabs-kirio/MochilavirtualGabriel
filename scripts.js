@@ -32,14 +32,14 @@ function exibirConteudo() {
         var subjectId = btnExibirConteudo.getAttribute("data-subject");
 
         var conteudos = {
-            "amc": { titulo: "Conteúdo AMC", descricao: "Aqui estão os detalhes da matéria de Arquitetura e Manutenção de Computadores." },
-            "gt": { titulo: "Conteúdo GT", descricao: "Aqui estão os detalhes da matéria de Gestão do Tempo." },
+            "amc": { titulo: "Conteúdo AMC", descricao: "Um datacenter, ou centro de processamento de dados, é um local físico onde são armazenados e processados grandes volumes de dados, utilizando servidores, equipamentos de rede e sistemas de armazenamento. É uma infraestrutura essencial para o funcionamento da internet e de diversas aplicações e serviços, garantindo segurança, velocidade e capacidade para lidar com as demandas digitais." },
+            "gt": { titulo: "Conteúdo GT", descricao: "A Técnica Pomodoro é um método de gerenciamento de tempo que divide o trabalho em blocos de tempo focados, chamados, intercalados com pequenas pausas. O objetivo é aumentar a produtividade e reduzir a fadiga mental. É feito um bloco de 25 minutos de foco total e 5 de descanço, depois de 4 blocos tem uma pausa de 30 minutos" },
             "nr": { titulo: "Conteúdo NR", descricao: "A robótica é um campo multidisciplinar que envolve o design, construção, operação e aplicação de robôs. Este ramo da engenharia visa criar máquinas inteligentes que podem auxiliar os seres humanos em diversas tarefas e setores." },
             "poo": { titulo: "Conteúdo POO JAVA", descricao: "No meu software, existe uma logica matematica usada por uma conta: o computador faz uma conta de proporção entre as horas livres e a dificuldade na materia colocada, assim gernado as horas semanais de estudo." },
             "progweb": { titulo: "Conteúdo PROG WEB", descricao: "Importancia da programação web: Hoje em dia, a internet não é mais um brinquedo, mas sim uma ferramenta, logo, a prog web (criação de sites e sistemas) é uma habilidade essencial para trabalhadores do 'novo mundo'. A programação web possui grandes vantagens como: Alta empregabilidade, autonomia, capacidade de resolver problemas, base de empregabilidade e inclusão moral e social. Então, estudar prog web é mais que aprender uma profissão, é entender sobre como o mundo funciona" },
             "htmlcss": { titulo: "Conteúdo HTML & CSS", descricao: "Meu site possui os temas, esse esquema de troca de cores do botão, a fonte da letra e os simbolos." },
-            "logpr": { titulo: "Conteúdo LOG PR", descricao: "Aqui estão os detalhes da matéria de Lógica de Programação." },
-            "so": { titulo: "Conteúdo SO", descricao: "Aqui estão os detalhes da matéria de Sistemas Operacionais." }
+            "logpr": { titulo: "Conteúdo LOG PR", descricao: "Lógica de programação é a base para desenvolver soluções computacionais, envolvendo a criação de algoritmos e a estruturação de passos lógicos para resolver problemas de forma eficiente. É a habilidade de pensar de maneira sistemática e sequencial para que o computador possa executar as tarefas desejadas. ." },
+            "so": { titulo: "Conteúdo SO", descricao: "Não há um "melhor" sistema operacional que se aplique a todos. A escolha depende das necessidades individuais do usuário e do uso que será feito do sistema. O Windows é amplamente popular e conhecido pela facilidade de uso, compatibilidade com diversos softwares e jogos. O Linux é valorizado pela segurança, personalização e desempenho em hardware mais limitado. O macOS, exclusivo para computadores Apple, é conhecido por seu design, integração com outros dispositivos Apple e eficiência em tarefas criativas" }
         };
 
         if (conteudos[subjectId]) {
