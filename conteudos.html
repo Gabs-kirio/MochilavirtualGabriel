@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conteúdos do Curso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    header, nav, main, footer {
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .subject-buttons button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #conteudo-materia {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+    #exibir-conteudo-btn, #download-container button {
+      padding: 8px 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="titulo-principal">Conteúdos do Curso</h1>
+    <p id="instrucoes">Selecione uma matéria para visualizar seu conteúdo.</p>
+  </header>
+
+  <nav class="subject-buttons">
+    <!-- Cada botão aciona a função alterarConteudo com os parâmetros: título, descrição e subjectId -->
+    <button onclick="alterarConteudo('Conteúdo AMC', 'Um datacenter é um local físico onde são armazenados e processados grandes volumes de dados.', 'amc')">
+      AMC
+    </button>
+    <button onclick="alterarConteudo('Conteúdo GT', 'A Técnica Pomodoro é um método para gerenciar o tempo, alternando períodos de foco e descanso.', 'gt')">
+      GT
+    </button>
+    <button onclick="alterarConteudo('Conteúdo NR', 'Descrição ainda não definida para esta matéria.', 'nr')">
+      NR
+    </button>
+    <button onclick="alterarConteudo('Conteúdo POO JAVA', 'No meu software, existe uma lógica matemática que define as horas semanais de estudo.', 'poo')">
+      POO JAVA
+    </button>
+    <button onclick="alterarConteudo('Conteúdo PROG WEB', 'A programação web é essencial para desenvolvimento de sites e sistemas modernos.', 'progweb')">
+      PROG WEB
+    </button>
+    <button onclick="alterarConteudo('Conteúdo HTML & CSS', 'Temas, fontes e cores estão presentes no design do meu site.', 'htmlcss')">
+      HTML & CSS
+    </button>
+    <button onclick="alterarConteudo('Conteúdo LOG PR', 'A lógica de programação é a base para desenvolver algoritmos e soluções computacionais.', 'logpr')">
+      LOG PR
+    </button>
+    <button onclick="alterarConteudo('Conteúdo SO', 'Os sistemas operacionais variam conforme a necessidade do usuário e o uso adequado de cada um.', 'so')">
+      SO
+    </button>
+  </nav>
+
+  <main>
+    <!-- Área destinada à exibição do conteúdo da matéria -->
+    <div id="conteudo-materia" style="display:none;">
+      <h2 id="titulo-conteudo"></h2>
+      <p id="descricao-conteudo"></p>
+    </div>
+
+    <!-- Container para o botão de download que aparece somente para POO -->
+    <div id="download-container" style="display:none;">
+      <button>Download Material</button>
+    </div>
+
+    <!-- Botão para exibir/ocultar o conteúdo, o qual será ativado após uma matéria ser selecionada -->
+    <button id="exibir-conteudo-btn" data-subject="" style="display:none;" onclick="exibirConteudo()">📖 Ver Conteúdo</button>
+  </main>
+
+  <footer>
+    <button onclick="voltarParaInicio()">Voltar para Início</button>
+  </footer>
+
+  <!-- Importa o arquivo JavaScript contendo as funções -->
+  <script src="js.txt"></script>
+</body>
+</html>
