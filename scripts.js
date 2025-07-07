@@ -35,7 +35,7 @@ function exibirConteudo() {
     var conteudos = {
   "amc": {
     titulo: "Conteúdo AMC",
-    descricao: "<h1>Datacenter</h1> Um datacenter, ou centro de processamento de dados, é um local físico onde são armazenados e processados grandes volumes de dados, utilizando servidores, equipamentos de rede e sistemas de armazenamento. É uma infraestrutura essencial para o funcionamento da internet e de diversas aplicações e serviços, garantindo segurança, velocidade e capacidade para lidar com as demandas digitais. <br><img src='caminho/para/imagem.jpg' alt='Imagem do Datacenter'> <h1>Solda</h1> <p>Fizemos soldagem para imenda de cabos de rede e soldamos na placa de FAX</p>"
+    descricao: "<h1>Datacenter</h1> <p>Um datacenter, ou centro de processamento de dados, é um local físico onde são armazenados e processados grandes volumes de dados, utilizando servidores, equipamentos de rede e sistemas de armazenamento. É uma infraestrutura essencial para o funcionamento da internet e de diversas aplicações e serviços, garantindo segurança, velocidade e capacidade para lidar com as demandas digitais.</p> <br><img src='caminho/para/imagem.jpg' alt='Imagem do Datacenter'> <h1>Solda</h1> <p>Fizemos soldagem para imenda de cabos de rede e soldamos na placa de FAX</p>"
   },
 
 
