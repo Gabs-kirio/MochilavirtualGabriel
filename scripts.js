@@ -35,7 +35,7 @@ function exibirConteudo() {
     var conteudos = {
   "amc": {
     titulo: "Conteúdo AMC",
-    descricao: "<h1>Datacenter</h1> <p>Um datacenter, ou centro de processamento de dados, é um local físico onde são armazenados e processados grandes volumes de dados, utilizando servidores, equipamentos de rede e sistemas de armazenamento. É uma infraestrutura essencial para o funcionamento da internet e de diversas aplicações e serviços, garantindo segurança, velocidade e capacidade para lidar com as demandas digitais.</p> <br><img src='caminho/para/imagem.jpg' alt='Imagem do Datacenter'> <h1>Solda</h1> <p>Fizemos soldagem para imenda de cabos de rede e soldamos na placa de FAX</p>"
+    descricao: "Um datacenter, ou centro de processamento de dados, é um local físico onde são armazenados e processados grandes volumes de dados, utilizando servidores, equipamentos de rede e sistemas de armazenamento. É uma infraestrutura essencial para o funcionamento da internet e de diversas aplicações e serviços, garantindo segurança, velocidade e capacidade para lidar com as demandas digitais. <br><img src='caminho/para/imagem.jpg' alt='Imagem do Datacenter'>"
   },
 
 
@@ -45,7 +45,7 @@ function exibirConteudo() {
       },
       "nr": { 
         titulo: "Conteúdo NR", 
-        descricao: "<h1>Conteudos trabalhados</h1> <p>trabalhamos nesse bimestre com o novo kit de robotica, aprendendo sobre algumas peças e montando o projeto de uma <strong>sirene que toca automaticamente</strong> <br><img src='Kit robotica.jpg' alt='Kit robotica'> <a href='https://www.youtube.com/watch?v=Mh8kLvJ33K4'>Saiba mais</a> <h1>Projeto arduino</h1> <p>Os alunos Gabriel Santana e Felipe Gazinho vem produzindo um projeto no arduino uno que consiste em tocar uma música em um certo periodo do dia para substituir o sinal sonoro da escola, até agora o projeto esta em fase de teste, e conseguiram <strong>acender um led, faze-lo pisca e alterar sua velocidade.</strong></p>"
+        descricao: "<h1>Conteudos trabalhados</h1> <p>trabalhamos nesse bimestre com o novo kit de robotica, aprendendo sobre algumas peças e montando o projeto de uma <strong>sirene que toca automaticamente</strong> <br><img src='Kit robotica.jpg' alt='Kit robotica'> <a href='https://www.youtube.com/watch?v=Mh8kLvJ33K4'>Saiba mais</a>"
       },
       "poo": {
         titulo: "Conteúdo POO JAVA",
@@ -180,6 +180,41 @@ function toggleTemas() {
     quadroTemas.style.display = "flex";
   } else {
     quadroTemas.style.display = "none";
+  }
+}
+function changeTheme(theme) {
+  // 1) Remove todas as fórmulas ativas
+  removeMathFormulas();
+
+  // 2) Remove classes anteriores e aplica a nova
+  document.body.classList.remove(
+    "theme-light",
+    "theme-dark",
+    "theme-pixel",
+    "theme-custom",
+    "theme-math"
+  );
+  document.body.classList.add("theme-" + theme);
+
+  // 3) Salva no localStorage
+  localStorage.setItem("selectedTheme", theme);
+
+  // 4) Lógica de background e painel customizado
+  var customBg = document.getElementById("custom-bg");
+  if (["light", "dark", "pixel", "math"].includes(theme)) {
+    if (customBg) customBg.style.display = "none";
+
+    if (theme === "pixel") {
+      document.body.style.backgroundImage = "url('pixel-art.jpg')";
+    } else if (theme === "math") {
+      document.body.style.backgroundImage = "url('math-bg.png')";
+      createMathFormulas(); // recria as fórmulas apenas para o tema math
+    } else {
+      document.body.style.backgroundImage = "";
+    }
+  } else if (theme === "custom") {
+    if (customBg) customBg.style.display = "block";
+    applySavedCustomBackground();
   }
 }
 
