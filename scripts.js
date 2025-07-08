@@ -45,7 +45,7 @@ function exibirConteudo() {
       },
       "nr": { 
         titulo: "Conteúdo NR", 
-        descricao: "<h1>Conteudos trabalhados</h1> <p>trabalhamos nesse bimestre com o novo kit de robotica, aprendendo sobre algumas peças e montando o projeto de uma <strong>sirene que toca automaticamente</strong> <br><img src='Kit robotica.jpg' alt='Kit robotica'> <a href='https://www.youtube.com/watch?v=Mh8kLvJ33K4'>Saiba mais</a> <h1>Projeto arduino</h1> <p>Os alunos Gabriel Santana e Felipe Gazinho vem produzindo um projeto no arduino uno que consiste em tocar uma música em um certo periodo do dia para substituir o sinal sonoro da escola, até agora o projeto esta em fase de teste, e conseguiram acender um led, faze-lo pisca e alterar sua velocidade.</p>"
+        descricao: "<h1>Conteudos trabalhados</h1> <p>trabalhamos nesse bimestre com o novo kit de robotica, aprendendo sobre algumas peças e montando o projeto de uma <strong>sirene que toca automaticamente</strong> <br><img src='Kit robotica.jpg' alt='Kit robotica'> <a href='https://www.youtube.com/watch?v=Mh8kLvJ33K4'>Saiba mais</a> <h1>Projeto arduino</h1> <p>Os alunos Gabriel Santana e Felipe Gazinho vem produzindo um projeto no arduino uno que consiste em tocar uma música em um certo periodo do dia para substituir o sinal sonoro da escola, até agora o projeto esta em fase de teste, e conseguiram <strong>acender um led, faze-lo pisca e alterar sua velocidade.</strong></p>"
       },
       "poo": {
         titulo: "Conteúdo POO JAVA",
