@@ -43,7 +43,7 @@ body {
   height: 70vh;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +51,7 @@ body {
   text-align: center;
   position: relative;
   overflow-y: auto;
+  backdrop-filter: blur(10px);
 }
 
 /* Botão MediaFire */
