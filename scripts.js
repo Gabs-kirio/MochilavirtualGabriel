@@ -70,11 +70,11 @@ function exibirConteudo() {
       },
       "progweb": {
         titulo: "Conteúdo PROG WEB",
-        descricao: "<h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
       },
       "htmlcss": {
         titulo: "Conteúdo HTML & CSS",
-        descricao: "<h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
       },
       "logpr": {
         titulo: "Conteúdo LOG PR",
