@@ -55,6 +55,12 @@ body {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
+/* Exemplo: container no qual você quer aplicar o scroll incremental */
+.scroll-step-container {
+  max-height: 300px;       /* altura fixa para ativar o scroll */
+  overflow-y: auto;        /* permite o scroll vertical */
+  scroll-behavior: smooth; /* animação suave ao usar scrollBy() */
+}
 
 /* Botão MediaFire */
 #mediafire-container {
@@ -122,6 +128,13 @@ body {
   color: white;
 }
 
+body.theme-Acherongif {
+  background-image: url('https://i.pinimg.com/originals/23/98/c4/2398c4cea3a7f072ecf614f127422b91.gif');
+  background-repeat: no-repeat;        /* remove a repetição */
+  background-size: cover;              /* escala para cobrir toda a área */
+  background-position: center center;  /* centraliza o GIF */
+  background-attachment: fixed;        /* opcional: fixa o GIF durante o scroll */
+}
 /* Temas para o body */
 body.theme-light {
   background-color: #f5f5f5;
