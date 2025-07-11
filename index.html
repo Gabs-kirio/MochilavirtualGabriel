@@ -41,16 +41,17 @@
     <button onclick="changeTheme('pixel')">🟪</button> <!-- Pixel (usei um quadrado, pode ajustar) -->
     <button onclick="changeTheme('math')">π</button> <!-- Símbolo Pi para Matemática -->
     <button onclick="changeTheme('custom')">❓</button> <!-- Interrogação para Personalizado -->
+    <button onclick="changeTheme('Acherongif')">🦢</button> <!-- Interrogação para Personalizado -->
      <button onclick="toggleMathTheme()">Evento</button>
 </div>
 
-    <div class="container">
+    <div id="meu-container" class="container">
         <h1 id="titulo-principal">Matérias do técnico</h1>
         <p id="instrucoes">Selecione uma opção para prosseguir</p>
 <div id="download-container" class="download-box" style="display: none;">
     <a href="ciclo de estudos.jar" target="_blank" id="download-btn">📥 Baixar Material de POO Java</a>
 </div>
-<button id="exibir-conteudo-btn" class="botoesbutton" onclick="exibirConteudo()" style="display: none;">📖 Ver Conteúdo</button>
+<button id="exibir-conteudo-btn" class="botoesbutton" onclick="exibirConteudo()" style="display: none;">📖 3° Bimestre</button>
 
 
 
@@ -71,7 +72,7 @@
 
         <!-- Botão para exibir conteúdo -->
         
-        <div id="conteudo-materia" class="conteudo-box" style="display: none;">
+        <div id="conteudo-materia" class="scroll-step-container" style="display: none;">
             <h2 id="titulo-conteudo"></h2>
             <p id="descricao-conteudo"></p>
         </div>
