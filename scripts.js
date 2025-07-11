@@ -15,8 +15,8 @@ function alterarConteudo(titulo, detalhes, subjectId) {
   // Oculta a área de conteúdo ao selecionar uma nova matéria
   document.getElementById("conteudo-materia").style.display = "none";
 
-  // Redefine o texto do botão para "📖 Ver Conteúdo"
-  btnExibirConteudo.innerText = "📖 Ver Conteúdo";
+  // Redefine o texto do botão para "📖3° Bimestre"
+  btnExibirConteudo.innerText = "📖3° Bimestre";
 }
 
 function exibirConteudo() {
@@ -26,7 +26,7 @@ function exibirConteudo() {
   // Se o conteúdo já estiver visível, oculta-o e muda o texto do botão
   if (conteudoMateria.style.display === "block") {
     conteudoMateria.style.display = "none";
-    btnExibirConteudo.innerHTML = "3° Bimestre";
+    btnExibirConteudo.innerHTML = "📖3° Bimestre";
   } else {
     // Obtém o ID da matéria definida no atributo data-subject do botão
     var subjectId = btnExibirConteudo.getAttribute("data-subject");
