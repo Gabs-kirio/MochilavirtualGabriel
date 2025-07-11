@@ -1,3 +1,20 @@
+const container = document.getElementById('scroll-container');
+
+    container.addEventListener('wheel', function(e) {
+      e.preventDefault();  // Impede o scroll padrão “rápido”
+
+      // Defina aqui quantos pixels quer avançar por “tick” da roda
+      const STEP = 40;
+
+      // e.deltaY > 0 → scroll pra baixo, < 0 → scroll pra cima
+      const direction = e.deltaY > 0 ? 1 : -1;
+
+      // scrollBy com comportamento suave
+      this.scrollBy({
+        top: direction * STEP,
+        behavior: 'smooth'
+      });
+    }, { passive: false });
 // Função para alterar o conteúdo ao selecionar uma matéria
 function alterarConteudo(titulo, detalhes, subjectId) {
   // Agora usa innerHTML para que, se "titulo" ou "detalhes" tiverem tags HTML, elas sejam interpretadas
@@ -348,3 +365,4 @@ function alterarConteudo(titulo, detalhes, subjectId) {
 function voltarParaInicio() {
   window.location.href = "index.html"; // Altere para o caminho da sua página inicial
 }
+
