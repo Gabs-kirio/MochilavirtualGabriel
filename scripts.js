@@ -1,20 +1,3 @@
-const container = document.getElementById('scroll-container');
-
-    container.addEventListener('wheel', function(e) {
-      e.preventDefault();  // Impede o scroll padrão “rápido”
-
-      // Defina aqui quantos pixels quer avançar por “tick” da roda
-      const STEP = 40;
-
-      // e.deltaY > 0 → scroll pra baixo, < 0 → scroll pra cima
-      const direction = e.deltaY > 0 ? 1 : -1;
-
-      // scrollBy com comportamento suave
-      this.scrollBy({
-        top: direction * STEP,
-        behavior: 'smooth'
-      });
-    }, { passive: false });
 // Função para alterar o conteúdo ao selecionar uma matéria
 function alterarConteudo(titulo, detalhes, subjectId) {
   // Agora usa innerHTML para que, se "titulo" ou "detalhes" tiverem tags HTML, elas sejam interpretadas
@@ -52,37 +35,37 @@ function exibirConteudo() {
     var conteudos = {
   "amc": {
     titulo: "Conteúdo AMC",
-    descricao: "<h3>10/07 Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+    descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p><h1>Aula 11</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 12</h1><h3>a</h3><p>a</p><h1>Aula 13</h1><h3>b</h3><p>a</p><h1>Aula 14</h1><h3>a</h3><p>a</p><h1>Aula 15</h1><h3>a</h3><p>a</p><h1>Aula 16</h1><h3>a</h3><p>a</p><h1>Aula 17</h1><h3>a</h3><p>a</p><h1>Aula 18</h1><h3>a</h3><p>a</p><h1>Aula 19</h1><h3>a</h3><p>a</p><h1>Aula 20</h1><h3>a</h3><p>a</p>"
   },
 
 
       "gt": {
         titulo: "Conteúdo GT",
-        descricao: "<h3> 10/07 Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "nr": { 
         titulo: "Conteúdo NR", 
-        descricao: "<h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "poo": {
         titulo: "Conteúdo POO JAVA",
-        descricao: "<h3>11/07 Software</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p><h1>Aula 11</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 12</h1><h3>a</h3><p>a</p><h1>Aula 13</h1><h3>b</h3><p>a</p><h1>Aula 14</h1><h3>a</h3><p>a</p><h1>Aula 15</h1><h3>a</h3><p>a</p><h1>Aula 16</h1><h3>a</h3><p>a</p><h1>Aula 17</h1><h3>a</h3><p>a</p><h1>Aula 18</h1><h3>a</h3><p>a</p><h1>Aula 19</h1><h3>a</h3><p>a</p><h1>Aula 20</h1><h3>a</h3><p>a</p>"
       },
       "progweb": {
         titulo: "Conteúdo PROG WEB",
-        descricao: "<h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "htmlcss": {
         titulo: "Conteúdo HTML & CSS",
-        descricao: "<h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "logpr": {
         titulo: "Conteúdo LOG PR",
-        descricao: "<h3> 10/07 Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "so": {
         titulo: "Conteúdo SO",
-        descricao: "<h3>Introdução a criação de jogos</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       }
     };
 
@@ -100,7 +83,7 @@ function exibirConteudo() {
 // Função para alterar o tema e salvar no localStorage
 function changeTheme(theme) {
   // Remove os temas anteriores e aplica o novo
-  document.body.classList.remove("theme-light", "theme-dark", "theme-pixel", "theme-custom", "theme-math");
+  document.body.classList.remove("theme-light", "theme-dark", "theme-pixel", "theme-custom", "theme-math", "Acherongif");
   document.body.classList.add("theme-" + theme);
 
   // Salva o tema escolhido no localStorage
@@ -108,7 +91,7 @@ function changeTheme(theme) {
 
   var customBg = document.getElementById("custom-bg");
 
-  if (theme === "light" || theme === "dark" || theme === "pixel" || theme === "math") {
+  if (theme === "light" || theme === "dark" || theme === "pixel" || theme === "math"|| theme === "Acherongif") {
     if (customBg) customBg.style.display = "none";
     if (theme === "pixel") {
       document.body.style.backgroundImage = "url('pixel-art.jpg')";
@@ -209,7 +192,8 @@ function changeTheme(theme) {
     "theme-dark",
     "theme-pixel",
     "theme-custom",
-    "theme-math"
+    "theme-math",
+    "theme-Acherongif",
   );
   document.body.classList.add("theme-" + theme);
 
@@ -365,4 +349,21 @@ function alterarConteudo(titulo, detalhes, subjectId) {
 function voltarParaInicio() {
   window.location.href = "index.html"; // Altere para o caminho da sua página inicial
 }
+// Scroll incremental “de pouco em pouco” na roda do mouse
+;(function(){
+  const container = document.getElementById("ontainer");  
+  if (!container) return;
 
+  // Captura o evento de roda do mouse
+  container.addEventListener("wheel", function(e) {
+    e.preventDefault();   // impede o scroll “rápido” padrão
+
+    const STEP = 40;      // quantos pixels rola a cada “tick” da roda
+    const direction = e.deltaY > 0 ? 1 : -1;
+
+    container.scrollBy({
+      top: direction * STEP,
+      behavior: "smooth"
+    });
+  }, { passive: false });
+})();
