@@ -35,7 +35,7 @@ function exibirConteudo() {
     var conteudos = {
   "amc": {
     titulo: "Conteúdo AMC",
-    descricao: "<h3>10/07 Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+    descricao: "<h3>10/07 Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
   },
 
 
@@ -49,11 +49,11 @@ function exibirConteudo() {
       },
       "poo": {
         titulo: "Conteúdo POO JAVA",
-        descricao: "<h3>11/07 Software</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h3>11/07 Software</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
       },
       "progweb": {
         titulo: "Conteúdo PROG WEB",
-        descricao: "<h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h3>11/07 Registro de aulas no site</h3><p>Foi feito o registro de todas aulas do bimestre dentro do site</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
       },
       "htmlcss": {
         titulo: "Conteúdo HTML & CSS",
@@ -65,7 +65,7 @@ function exibirConteudo() {
       },
       "so": {
         titulo: "Conteúdo SO",
-        descricao: "<h3>Introdução a criação de jogos</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
+        descricao: "<h3>Introdução a criação de jogos</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p><h3>Aula 1</h3><p>a</p><h3>Aula 2</h3><p>a</p><h3>Aula 3</h3><p>a</p><h3>Aula 4</h3><p>a</p><h3>Aula 5</h3><p>a</p><h3>Aula 6</h3><p>a</p><h3>Aula 7</h3><p>a</p><h3>Aula 8</h3><p>a</p><h3>Aula 9</h3><p>a</p><h3>Aula 10</h3><p>a</p>"
       }
     };
 
