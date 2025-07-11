@@ -26,7 +26,7 @@ function exibirConteudo() {
   // Se o conteúdo já estiver visível, oculta-o e muda o texto do botão
   if (conteudoMateria.style.display === "block") {
     conteudoMateria.style.display = "none";
-    btnExibirConteudo.innerHTML = "📖 Ver Conteúdo";
+    btnExibirConteudo.innerHTML = "3° Bimestre";
   } else {
     // Obtém o ID da matéria definida no atributo data-subject do botão
     var subjectId = btnExibirConteudo.getAttribute("data-subject");
@@ -35,37 +35,37 @@ function exibirConteudo() {
     var conteudos = {
   "amc": {
     titulo: "Conteúdo AMC",
-    descricao: "<h1>2° Bimestre</h1> <h2>Datacenter</h2> Um datacenter, ou centro de processamento de dados, é um local físico onde são armazenados e processados grandes volumes de dados, utilizando servidores, equipamentos de rede e sistemas de armazenamento. É uma infraestrutura essencial para o funcionamento da internet e de diversas aplicações e serviços, garantindo segurança, velocidade e capacidade para lidar com as demandas digitais. <br><img src='caminho/para/imagem.jpg' alt='Imagem do Datacenter'>"
+    descricao: "<p>a</p>"
   },
 
 
       "gt": {
         titulo: "Conteúdo GT",
-        descricao: "<h1>2° Bimestre</h1> <h2>Pomodoro</h2> A Técnica Pomodoro é um método de gerenciamento de tempo que divide o trabalho em blocos de tempo focados, chamados, intercalados com pequenas pausas. O objetivo é aumentar a produtividade e reduzir a fadiga mental. É feito um bloco de 25 minutos de foco total e 5 de descanso, depois de 4 blocos tem uma pausa de 30 minutos.<h1>3° Bimestre </h1>"
+        descricao: "<p>a</p>"
       },
       "nr": { 
         titulo: "Conteúdo NR", 
-        descricao: "<h1>2° Bimestre </h1> <h2>Conteudos trabalhados</h2> <p>trabalhamos nesse bimestre com o novo kit de robotica, aprendendo sobre algumas peças e montando o projeto de uma <strong>sirene que toca automaticamente</strong> <br><img src='Kit robotica.jpg' alt='Kit robotica'> <a href='https://www.youtube.com/watch?v=Mh8kLvJ33K4'>Saiba mais<h1>3° Bimestre </h1></a>"
+        descricao: "<p>a</p>"
       },
       "poo": {
         titulo: "Conteúdo POO JAVA",
-        descricao: "<h1>2° Bimestre </h1> <h2>Matemática no meu software</h2> No meu software, existe uma lógica matemática usada por uma conta: o computador faz uma conta de proporção entre as horas livres e a dificuldade na matéria colocada, assim gerando as horas semanais de estudo."
+        descricao: "<p>a</p>"
       },
       "progweb": {
         titulo: "Conteúdo PROG WEB",
-        descricao: "<h1>2° Bimestre </h1> <h2>Importancia da prog web</h2>Importância da programação web: Hoje em dia, a internet não é mais um brinquedo, mas sim uma ferramenta, logo, a prog web (criação de sites e sistemas) é uma habilidade essencial para trabalhadores do 'novo mundo'. A programação web possui grandes vantagens como: alta empregabilidade, autonomia, capacidade de resolver problemas, e inclusão social. Então, estudar prog web é mais que aprender uma profissão, é entender como o mundo funciona."
+        descricao: "<p>a</p>"
       },
       "htmlcss": {
         titulo: "Conteúdo HTML & CSS",
-        descricao: "<h1>2° Bimestre </h1> <h2>Conteudo de CSS no site</h2> Meu site possui os temas, esse esquema de troca de cores do botão, a fonte da letra e os símbolos."
+        descricao: "<p>a</p>"
       },
       "logpr": {
         titulo: "Conteúdo LOG PR",
-        descricao: "<h1>2° Bimestre </h1> <h2>Oque é LOG PR</h2>Lógica de programação é a base para desenvolver soluções computacionais, envolvendo a criação de algoritmos e a estruturação de passos lógicos para resolver problemas de forma eficiente."
+        descricao: "<p>a</p>"
       },
       "so": {
         titulo: "Conteúdo SO",
-        descricao: "<h1>2° Bimestre </h1> <h2>Melhor sistema operacional</h2>Não há um <strong>melhor</strong> sistema operacional que se aplique a todos. A escolha depende das necessidades individuais. O Windows é popular e fácil de usar, o Linux é valorizado pela segurança e personalização e o macOS se destaca por seu design e integração com dispositivos Apple."
+        descricao: "<p>a</p>"
       }
     };
 
@@ -74,7 +74,7 @@ function exibirConteudo() {
       document.getElementById("titulo-conteudo").innerHTML = conteudos[subjectId].titulo;
       document.getElementById("descricao-conteudo").innerHTML = conteudos[subjectId].descricao;
       conteudoMateria.style.display = "block";
-      btnExibirConteudo.innerHTML = "❌ Fechar Conteúdo";
+      btnExibirConteudo.innerHTML = "❌ 3° Bimestre";
     }
   }
 }
