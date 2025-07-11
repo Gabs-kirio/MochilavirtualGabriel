@@ -129,6 +129,38 @@ function applySavedTheme() {
 // Chama a função ao carregar a página para aplicar o último tema salvo
 window.addEventListener("load", applySavedTheme);
 
+// 1) Obtenha o elemento de áudio
+const themeAudio = document.getElementById("theme-music");
+
+// 2) Mapear cada tema ao seu arquivo MP3
+const themeTracks = {
+  light: null,               // sem música para o tema claro
+  dark: null,
+  pixel: null,
+  math: null,
+  custom: null,
+  Acherongif: "Iframe Undertale - _Do Or Die [Battle Against A True Hero]_ NITRO Remix [G3IVulm-Fsk].mp3",
+};
+
+// 3) Altere a função changeTheme para cuidar do áudio
+function changeTheme(theme) {
+  // --- seu código atual de troca de classes e background ---
+  document.body.className = ""; 
+  document.body.classList.add("theme-" + theme);
+  // … resto da sua lógica …
+
+  // --- tratar o áudio ---
+  const track = themeTracks[theme];
+  if (track) {
+    themeAudio.src = track;
+    themeAudio.volume = 0.5;  // ajuste entre 0 e 1  
+    themeAudio.play();
+  } else {
+    themeAudio.pause();
+    themeAudio.currentTime = 0;
+  }
+}
+
 // Função para gerar fórmulas matemáticas animadas no tema Matemática
 function createMathFormulas() {
   if (!document.body.classList.contains("theme-math")) return; // Se não for o tema Matemático, sai da função
