@@ -53,7 +53,7 @@ function exibirConteudo() {
       },
       "progweb": {
         titulo: "Conteúdo PROG WEB",
-        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>MySQL, JS e PHP</h3><p><strong>SQL (Structured Query Language)</strong> é uma linguagem padrão utilizada para gerenciar e manipular bancos de dados relacionais, permitindo que você acesse, recupere, atualize e exclua dados.</p><p><strong>JavaScript, frequentemente abreviado como JS</strong>, é uma linguagem de programação de alto nível e interpretada, amplamente utilizada para criar interatividade em páginas web e, mais recentemente, em aplicações de servidor (back-end) com Node.js.</p><p><strong> PHP (PHP: Hypertext Preprocessor)</strong> é uma linguagem de script de código aberto amplamente utilizada, especialmente para o desenvolvimento web. É uma linguagem do lado do servidor, o que significa que o código é processado no servidor antes de ser enviado para o navegador do usuário.</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "htmlcss": {
         titulo: "Conteúdo HTML & CSS",
@@ -139,8 +139,8 @@ const themeTracks = {
   pixel: null,
   math: null,
   custom: null,
-  Acherongif: "Iframe Undertale - _Do Or Die [Battle Against A True Hero]_ NITRO Remix [G3IVulm-Fsk].mp3",
-};
+  Acherongif: null,
+}
 
 // 3) Altere a função changeTheme para cuidar do áudio
 function changeTheme(theme) {
@@ -377,6 +377,120 @@ function alterarConteudo(titulo, detalhes, subjectId) {
   btnExibirConteudo.style.display = "block";
   btnExibirConteudo.setAttribute("data-subject", subjectId);
 }
+// --- Suas referências ao painel já devem existir:
+const colorPanel = document.getElementById("color-panel");
+const input1     = document.getElementById("color1");
+const input2     = document.getElementById("color2");
+const input3     = document.getElementById("color3");
+const btnApply   = document.getElementById("apply-colors");
+
+// Função que aplica o gradient usando as 3 cores
+function applyThreeColorBackground() {
+  const c1 = input1.value;
+  const c2 = input2.value;
+  const c3 = input3.value;
+  document.body.style.backgroundImage =
+    `linear-gradient(to right, ${c1}, ${c2}, ${c3})`;
+}
+
+// Aplica o listener no botão “Aplicar”
+btnApply.addEventListener("click", applyThreeColorBackground);
+
+// === Função changeTheme ajustada ===
+function changeTheme(theme) {
+  // 1) Remover possíveis fórmulas antigas e classes anteriores
+  removeMathFormulas();
+  document.body.classList.remove(
+    "theme-light", "theme-dark", "theme-pixel",
+    "theme-math", "theme-custom"
+  );
+
+  // 2) Adicionar a classe do tema atual
+  document.body.classList.add("theme-" + theme);
+
+  // 3) Lógica de planos de fundo por tema
+  if (theme === "pixel") {
+    document.body.style.backgroundImage = "url('pixel-art.jpg')";
+  } else if (theme === "math") {
+    document.body.style.backgroundImage = "url('math-bg.png')";
+    createMathFormulas();
+  } else {
+    // temas light, dark e custom tratamos abaixo
+    document.body.style.backgroundImage = "";
+  }
+
+  // 4) Exibir ou ocultar painel CUSTOM e aplicar/limpar gradient
+  if (theme === "custom") {
+    colorPanel.classList.remove("hidden");
+    // reaplica caso já tenha selecionado algo antes
+    applyThreeColorBackground();
+  } else {
+    colorPanel.classList.add("hidden");
+    // garante que não fique o gradient
+    document.body.style.backgroundImage = "";
+  }
+
+  // 5) Se usar armazenamento de tema:
+  localStorage.setItem("selectedTheme", theme);
+  
+  // … lógica de troca de classes e backgrounds …
+
+  if (theme === "custom") {
+    colorPanel.classList.remove("hidden");
+    colorPanel.classList.remove("collapsed");  // garante expandido
+    collapseBtn.textContent = "–";
+    loadSavedCustomColors();
+  } else {
+    colorPanel.classList.add("hidden");
+    colorPanel.classList.remove("collapsed");
+    document.body.style.backgroundImage = "";
+  }
+
+  localStorage.setItem("selectedTheme", theme);
+
+
+}
+const CUSTOM_COLORS_KEY = "customBackgroundColors";
+function applyThreeColorBackground() {
+  const c1 = input1.value;
+  const c2 = input2.value;
+  const c3 = input3.value;
+
+  // 1) Aplica o gradient no body
+  document.body.style.backgroundImage =
+    `linear-gradient(to right, ${c1}, ${c2}, ${c3})`;
+
+  // 2) Salva a escolha do usuário no localStorage
+  const colors = { c1, c2, c3 };
+  localStorage.setItem(CUSTOM_COLORS_KEY, JSON.stringify(colors));
+}
+function loadSavedCustomColors() {
+  const saved = localStorage.getItem(CUSTOM_COLORS_KEY);
+  if (!saved) return;
+
+  const { c1, c2, c3 } = JSON.parse(saved);
+
+  // Define os inputs para refletirem o que foi salvo
+  input1.value = c1;
+  input2.value = c2;
+  input3.value = c3;
+
+  // Aplica o gradient imediatamente
+  document.body.style.backgroundImage =
+    `linear-gradient(to right, ${c1}, ${c2}, ${c3})`;
+}
+// Botão de minimizar o painel
+const collapseBtn = document.getElementById("collapse-panel");
+collapseBtn.addEventListener("click", () => {
+  colorPanel.classList.toggle("collapsed");
+  
+  // Ajusta o símbolo do botão conforme o estado
+  if (colorPanel.classList.contains("collapsed")) {
+    collapseBtn.textContent = "+";  // mostra “+” para expandir
+  } else {
+    collapseBtn.textContent = "–";  // “–” para colapsar
+  }
+});
 
 function voltarParaInicio() {
   window.location.href = "index.html"; // Altere para o caminho da sua página inicial
@@ -398,4 +512,5 @@ function voltarParaInicio() {
       behavior: "smooth"
     });
   }, { passive: false });
+  
 })();
