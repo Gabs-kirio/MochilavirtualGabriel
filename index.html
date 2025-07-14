@@ -95,6 +95,27 @@
         </div>
         <button onclick="applyCustomBackground()">Aplicar</button>
     </div>
+<!-- Painel de 3 cores (inicialmente oculto) -->
+<!-- Painel de 3 cores -->
+<div id="color-panel" class="hidden">
+  <button id="collapse-panel" title="Minimizar painel">–</button>
+  <h4>Plano de Fundo Personalizado</h4>
+  <div class="panel-content">
+    <div>
+      <label for="color1">Cor 1:</label>
+      <input type="color" id="color1" value="#ff0000">
+    </div>
+    <div>
+      <label for="color2">Cor 2:</label>
+      <input type="color" id="color2" value="#00ff00">
+    </div>
+    <div>
+      <label for="color3">Cor 3:</label>
+      <input type="color" id="color3" value="#0000ff">
+    </div>
+    <button id="apply-colors">Aplicar</button>
+  </div>
+</div>
 
     <div id="conteudo-exibir"></div>
 </body>
