@@ -129,7 +129,7 @@ body {
 }
 
 body.theme-Acherongif {
-  background-image: url('Acherongif.gif');
+  background-image: url('https://i.pinimg.com/originals/23/98/c4/2398c4cea3a7f072ecf614f127422b91.gif');
   background-repeat: no-repeat;        /* remove a repetição */
   background-size: cover;              /* escala para cobrir toda a área */
   background-position: center center;  /* centraliza o GIF */
@@ -459,4 +459,93 @@ body.theme-custom #chatbox, body.theme-custom #chat-btn {
 #download-btn:hover {
     background-color: white;
     color: black;
+}/* Utilitário para ocultar elementos */
+.hidden {
+  display: none !important;
+}
+
+/* Painel de cores no canto superior esquerdo */
+#color-panel {
+  position: fixed;
+  top: 10px;
+  right: 10px;     /* mudou de left para right */
+  left: auto;      /* garante que não fique fixado à esquerda */
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 6px;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  width: 160px;
+}
+
+#color-panel h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#color-panel div {
+  margin-bottom: 6px;
+}
+
+#color-panel label {
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+#color-panel input[type="color"] {
+  width: 30px;
+  height: 24px;
+  border: none;
+  padding: 0;
+  vertical-align: middle;
+}
+
+#color-panel button {
+  width: 100%;
+  padding: 6px 0;
+  font-size: 13px;
+  cursor: pointer;
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+#color-panel button:hover {
+  background-color: #006f92;
+}
+/* Botão de minimizar */
+#collapse-panel {
+  width: 16px;           /* largura menor */
+  height: 16px;          /* altura menor */
+  font-size: 14px;       /* tamanho da fonte */
+  line-height: 16px;     /* centraliza o “–” verticalmente */
+  padding: 0;            /* remove espaçamento interno */
+}
+
+#collapse-panel:hover {
+  /* se quiser manter algum feedback ao passar o mouse */
+  background-color: rgba(0,0,0,0.1);
+}
+
+
+/* Conteúdo do painel */
+#color-panel .panel-content {
+  margin-top: 8px;
+}
+
+/* Estado colapsado */
+#color-panel.collapsed {
+  width: auto;            /* opcional: ajusta largura mínima */
+}
+
+#color-panel.collapsed h4,
+#color-panel.collapsed #collapse-panel {
+  margin-bottom: 0;
+}
+
+#color-panel.collapsed .panel-content {
+  display: none;          /* esconde todo o conteúdo interno */
 }
