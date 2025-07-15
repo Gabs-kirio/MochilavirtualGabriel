@@ -562,4 +562,18 @@ body.theme-custom #chatbox, body.theme-custom #chat-btn {
 #color-panel.collapsed .panel-content {
   display: none;          /* esconde todo o conteúdo interno */
 }
-table{width:100%;border-collapse:collapse;margin:40px 0}table,th,td{border:1px solid #ccc}th,td{padding:10px;text-align:left}ul{margin-top:0}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:40px 0
+}
+table,th,td{
+  border:1px solid #ccc
+}
+th,td{
+  padding:10px;
+  text-align:left
+}
+ul{
+  margin-top:0
+}
