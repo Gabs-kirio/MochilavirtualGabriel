@@ -18,6 +18,14 @@ function alterarConteudo(titulo, detalhes, subjectId) {
   // Redefine o texto do botão para "📖3° Bimestre"
   btnExibirConteudo.innerText = "📖3° Bimestre";
 }
+const btn = document.getElementById("exibir-conteudo-btn");
+const caixa = document.getElementById("botoes-esquerda");
+
+btn.addEventListener("click", () => {
+  // Para esconder imediatamente:
+  caixa.classList.toggle("botoes-esquerda");
+
+});
 
 function exibirConteudo() {
   var conteudoMateria = document.getElementById("conteudo-materia");
@@ -35,7 +43,7 @@ function exibirConteudo() {
     var conteudos = {
   "amc": {
     titulo: "Conteúdo AMC",
-    descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p><h1>Aula 11</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 12</h1><h3>a</h3><p>a</p><h1>Aula 13</h1><h3>b</h3><p>a</p><h1>Aula 14</h1><h3>a</h3><p>a</p><h1>Aula 15</h1><h3>a</h3><p>a</p><h1>Aula 16</h1><h3>a</h3><p>a</p><h1>Aula 17</h1><h3>a</h3><p>a</p><h1>Aula 18</h1><h3>a</h3><p>a</p><h1>Aula 19</h1><h3>a</h3><p>a</p><h1>Aula 20</h1><h3>a</h3><p>a</p>"
+    descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2 - 15/07</h1><h3>PC custo</h3><h1>Como Escolher um PC Custo-Benefício</h1><h2>1. Defina o objetivo principal do PC</h2><table><tr><th>Uso principal</th><th>Requisitos</th></tr><tr><td>Estudos, navegação e tarefas leves</td><td>Processador básico (Intel i3/Ryzen 3), 8 GB de RAM, SSD</td></tr><tr><td>Jogos medianos / edição leve</td><td>Processador intermediário (i5/Ryzen 5), 16 GB RAM, GPU dedicada</td></tr><tr><td>Jogos pesados / edição profissional</td><td>Processador potente (i7/Ryzen 7+), 16-32 GB RAM, GPU potente</td></tr><tr><td>Programação / multitarefa</td><td>Priorize RAM (16 GB+) e SSD</td></tr></table><h2>2. Priorize os componentes certos</h2><strong>CPU (Processador):</strong> Prefira Intel i3/i5 ou Ryzen 3/5. Evite Celeron e Pentium.<br><strong>RAM:</strong> Mínimo 8 GB, ideal 16 GB para jogos/edição.<br><strong>Armazenamento:</strong> Use SSD (mínimo 240 GB). Pode combinar com HD.<br><strong>Placa de vídeo:</strong> Para jogos/edição, considere GTX 1650, RTX 3050 ou RX 6600.</div><h2>3. Estabeleça um orçamento</h2><ul><li><strong>Até R$ 2.000:</strong> PC usado ou recondicionado, 8 GB RAM + SSD.</li><li><strong>R$ 2.500 a R$ 3.500:</strong> Ryzen 5 ou i5, 16 GB RAM, ótimo para uso geral.</li><li><strong>R$ 4.000 a R$ 5.000+:</strong> PCs com GPU dedicada boa, ideal para jogos e edição.</li></ul><h2>4. Montar ou comprar pronto?</h2><ul><li><strong>Montar:</strong> Mais barato e peças melhores.</li><li><strong>Comprar pronto:</strong> Mais prático, mas verifique a qualidade das peças.</li></ul><h2>5. Avalie marcas e garantia</h2><ul><li>Verifique se as peças têm garantia individual (em PCs montados).</li><li>Pesquise a reputação da loja.</li><li>Dell, Lenovo e Acer têm bom suporte. PCs montados podem ser mais potentes pelo mesmo preço.</li></ul><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p><h1>Aula 11</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 12</h1><h3>a</h3><p>a</p><h1>Aula 13</h1><h3>b</h3><p>a</p><h1>Aula 14</h1><h3>a</h3><p>a</p><h1>Aula 15</h1><h3>a</h3><p>a</p><h1>Aula 16</h1><h3>a</h3><p>a</p><h1>Aula 17</h1><h3>a</h3><p>a</p><h1>Aula 18</h1><h3>a</h3><p>a</p><h1>Aula 19</h1><h3>a</h3><p>a</p><h1>Aula 20</h1><h3>a</h3><p>a</p>"
   },
 
 
@@ -74,7 +82,7 @@ function exibirConteudo() {
       document.getElementById("titulo-conteudo").innerHTML = conteudos[subjectId].titulo;
       document.getElementById("descricao-conteudo").innerHTML = conteudos[subjectId].descricao;
       conteudoMateria.style.display = "block";
-      btnExibirConteudo.innerHTML = "❌ 3° Bimestre";
+      btnExibirConteudo.innerHTML = " 3° Bimestre";
     }
   }
 }
