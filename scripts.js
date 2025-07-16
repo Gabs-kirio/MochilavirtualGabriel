@@ -53,7 +53,7 @@ function exibirConteudo() {
       },
       "nr": { 
         titulo: "Conteúdo NR", 
-        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3 - 16/07</h1><h3>Ajuste no Software</h3><p>Ajuste no visual do software</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
+        descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2 - 16/07</h1><h3>Guia de aprendizagem</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 3 - 16/07</h1><h3>Ajuste no Software</h3><p>Ajuste no visual do software</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "poo": {
         titulo: "Conteúdo POO JAVA",
