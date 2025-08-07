@@ -48,7 +48,7 @@ function exibirConteudo() {
 
   "gt": {
      titulo: "Conteúdo GT",
-     descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2</h1><h3>a</h3><p>a</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
+     descricao: "<h1>Aula 1</h1><h3>10/07 - Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2 - 07/08/2025</h1><h3>Introdução ao google agenda</h3><p>Foi feita a introdução ao <a href="https://calendar.google.com/calendar/u/0/r/week/2027/1/31">google agenda</a>, onde aprendemos sobre criar os eventos e diversas formas de como organiza-los.</p><h1>Aula 3</h1><h3>b</h3><p>a</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
    },
    "nr": { 
     titulo: "Conteúdo NR", 
