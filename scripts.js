@@ -68,7 +68,7 @@ function exibirConteudo() {
       },
       "logpr": {
         titulo: "Conteúdo LOG PR",
-        descricao: "<h1>Aula 1 - 10/07</h1><h3>Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2 - 17/07</h1><h3>Introdução a criação de jogos de videogame</h3><p>Foi apresentado os conceitos sobre jogos de videogame e alguma parte de seus componentes, além do inicio do projeto do "fliperama".</p><h1>Aula 3 - 06/08</h1><h3>Clube de jogos</h3><p>Continuação do projeto do clube de jogos, onde teve a criação da base dos jogos.</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
+        descricao: "<h1>Aula 1 - 10/07</h1><h3>Guia de aprendizagem dos alunos</h3><p>Foi feito o planejamento de aulas do bimestre</p><h1>Aula 2 - 17/07</h1><h3>Introdução a criação de jogos de videogame</h3><p>Foi apresentado os conceitos sobre jogos de videogame e alguma parte de seus componentes, além do inicio do projeto do fliperama.</p><h1>Aula 3 - 06/08</h1><h3>Clube de jogos</h3><p>Continuação do projeto do clube de jogos, onde teve a criação da base dos jogos.</p><h1>Aula 4</h1><h3>a</h3><p>a</p><h1>Aula 5</h1><h3>a</h3><p>a</p><h1>Aula 6</h1><h3>a</h3><p>a</p><h1>Aula 7</h1><h3>a</h3><p>a</p><h1>Aula 8</h1><h3>a</h3><p>a</p><h1>Aula 9</h1><h3>a</h3><p>a</p><h1>Aula 10</h1><h3>a</h3><p>a</p>"
       },
       "so": {
         titulo: "Conteúdo SO",
